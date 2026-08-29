@@ -1,0 +1,39 @@
+# ---- Environments / caches ----
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# ---- Secrets — never commit ----
+.env
+*-service-account*.json
+*credentials*.json
+
+# ---- Bulk regenerable data (raw corpus, embeddings, caches) ----
+data/*
+# …except the locked taxonomy the live run loads at runtime.
+# NOTE: must be regenerated from the FASHION corpus. See STEP 7 fingerprint gate
+# in app/backend/live_run.py — a taxonomy from any other corpus refuses to boot.
+!data/taxonomy/
+
+# ---- Primary research — participant PII. Never enters git history. ----
+extras/
+interviews/
+
+# ---- Build output ----
+public/
+node_modules/
+
+# ---- Ad-hoc analysis scratch scripts ----
+# Throwaway one-off probes written during investigation. They carry hardcoded local
+# paths and are not part of the pipeline; keeping them untracked stops a `git add -A`
+# from sweeping them into a deploy.
+/test_*.py
+/get_*.py
+/extract_*.py
+/check_*.py
+/wishlist_extract.txt
+/package.json
+/package-lock.json
+/decisions/

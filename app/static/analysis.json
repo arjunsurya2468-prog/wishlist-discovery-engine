@@ -1,0 +1,3563 @@
+{
+  "generated_at": "2026-08-27T16:28:46.708013+00:00",
+  "run_id": "2026-08-21",
+  "project_name": "Wishlist Discovery Engine",
+  "header": {
+    "raw_scraped": 46737,
+    "usable": 13552,
+    "per_app_counts": {
+      "Myntra": {
+        "raw": 16110,
+        "usable": 4059,
+        "by_store": {
+          "forum": 204,
+          "play": 3644,
+          "appstore": 211
+        }
+      },
+      "AJIO": {
+        "raw": 15751,
+        "usable": 4525,
+        "by_store": {
+          "forum": 79,
+          "play": 4048,
+          "appstore": 398
+        }
+      },
+      "NykaaFashion": {
+        "raw": 14876,
+        "usable": 4968,
+        "by_store": {
+          "play": 4545,
+          "appstore": 423
+        }
+      }
+    },
+    "window_months": 12,
+    "scrape_window_months": 24,
+    "retention_pct": 29.0
+  },
+  "models": {
+    "embedding_model": "openai/text-embedding-3-large",
+    "llm_model": "groq/qwen/qwen3.8-27b",
+    "llm_fallback": "groq/openai/gpt-oss-120b"
+  },
+  "themes": [
+    {
+      "theme_name": "Pricing and Delivery Issues",
+      "summary": "The records primarily complain about high prices, delivery delays, and refund difficulties, with some mentions of app usability and account policies.",
+      "review_count": 4823,
+      "pct_of_corpus": 35.6,
+      "avg_rating": 1.23,
+      "per_app": {
+        "Myntra": 600,
+        "AJIO": 1960,
+        "Nykaa Fashion": 2263
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Post-purchase service failures; same population as full:22.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "your price are too high you should give it to reasonable price that everyone can buy",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "jo price hota hai usse 60 70 jyada pta ni kyu aja",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "2nd product isn't delivered yet, and there delivery partner (bluedart) updating that I'm not available",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 3,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Delivery delays and product quality issues",
+      "summary": "The records describe negative experiences involving delayed or cancelled orders, discrepancies between product photos and received items, and general dissatisfaction with customer service and product quality.",
+      "review_count": 4793,
+      "pct_of_corpus": 35.4,
+      "avg_rating": 1.15,
+      "per_app": {
+        "Myntra": 605,
+        "AJIO": 1686,
+        "Nykaa Fashion": 2502
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Post-purchase service failure (delivery delay, refund, support). Describes what happens AFTER a purchase, so it cannot explain a save that never converted.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "my order got delayed 2 times and still not delivered",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "selling plastic that should be in the landfill",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "one thing which is seen on photo inside of sole, it's not same",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 22,
+      "relevance_share": 0.628,
+      "score": 3009.0,
+      "per_app_observation": "The group is distributed across Myntra, AJIO, and Nykaa Fashion, with Nykaa Fashion having the highest count.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Delivery, Return, and Support Failures",
+      "summary": "Users report significant delays in order delivery, unresolved return pickup requests, and unresponsive or slow customer support channels. Additional complaints include incorrect items being shipped and discrepancies between displayed and final prices.",
+      "review_count": 1250,
+      "pct_of_corpus": 9.2,
+      "avg_rating": 1.07,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 1,
+        "Nykaa Fashion": 1246
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Nykaa Fashion fulfilment and support failures — post-purchase, outside the wishlist funnel.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "my order was delayed by almost 20 days and still remained in the “Confirmed” status without being shipped for a long time",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "It’s been 5+ days, and no one has come for the pickup",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "The chat support is extremely slow—there is often a 10-minute gap between each reply",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score+relevance",
+      "track": "full",
+      "cluster_id": 1,
+      "relevance_share": 0.907,
+      "score": 1134.0,
+      "per_app_observation": "The group is overwhelmingly composed of records for Nykaa Fashion.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Delivery Delays and Return Issues",
+      "summary": "The records primarily describe negative experiences with order delivery delays, stalled return pickups, and difficulties in contacting customer support for resolution.",
+      "review_count": 1144,
+      "pct_of_corpus": 8.4,
+      "avg_rating": 1.07,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 0,
+        "Nykaa Fashion": 1143
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Nykaa fulfilment/refund failures — post-purchase.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "my order was delayed by almost 20 days and still remained in the “Confirmed” status without being shipped for a long time",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "It’s been 5+ days, and no one has come for the pickup",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "waiting for the return parcel at home from 1-6-2025 till today like a house arrest for return call me",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 1,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The group is overwhelmingly composed of records related to the Nykaa Fashion app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Delivery Failures and Wallet Issues",
+      "summary": "The records primarily describe experiences with undelivered orders, cancelled shipments, and the inability to use AJIO Cash or wallet balances, alongside general complaints about poor service quality.",
+      "review_count": 1006,
+      "pct_of_corpus": 7.4,
+      "avg_rating": 1.08,
+      "per_app": {
+        "Myntra": 4,
+        "AJIO": 997,
+        "Nykaa Fashion": 5
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "AJIO delivery/refund/wallet failures — post-purchase, outside the wishlist funnel.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "I placed my first order on 9th July, and the app clearly mentioned that it would be delivered within 2 days. However, I waited for 10 days, and the order was still not delivered.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Not able to use Ajio cash On Any product , Not only in my account also in my friends account .",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "i have returned item balance whoch i didnt used, i thought its always there whenever i need i use it but ajio wallte expired them which is my money not any scheme or gift balance and now they say no to return",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 7,
+      "relevance_share": 0.641,
+      "score": 645.0,
+      "per_app_observation": "The group is overwhelmingly dominated by records for AJIO, which accounts for 997 of the 1006 entries.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "General Positive Shopping Experiences",
+      "summary": "The records primarily consist of highly positive reviews praising the app's ease of use, product quality, and service, with a few isolated mentions of specific product issues or unrelated personal anecdotes.",
+      "review_count": 889,
+      "pct_of_corpus": 6.6,
+      "avg_rating": 4.89,
+      "per_app": {
+        "Myntra": 876,
+        "AJIO": 6,
+        "Nykaa Fashion": 7
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Generic app praise with no decision content; does not speak to any gate.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Excellent Shopping Experience! Myntra is one of the best shopping apps for fashion.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "a wonderful success story of a self made lady. I am her admirer",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Wrogn Jeans. Good fabric and relaxed fit felt good but at the bottom of the pant i could see some scratches and little toren",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 11,
+      "relevance_share": 0.507,
+      "score": 451.0,
+      "per_app_observation": "The group is overwhelmingly dominated by records from the Myntra app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Order Errors and Refund Failures",
+      "summary": "Users report receiving incorrect items, experiencing unauthorized or incorrect payments, and facing difficulties in obtaining refunds or resolving delivery issues despite contacting customer support.",
+      "review_count": 521,
+      "pct_of_corpus": 3.8,
+      "avg_rating": 1.21,
+      "per_app": {
+        "Myntra": 498,
+        "AJIO": 10,
+        "Nykaa Fashion": 13
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Wrong/used items and denied returns — post-purchase service failure.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "I ordered a shirt from Fashion Hub but received a different brand instead.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Wrong payment taken. Payment shown was after 15% discount 1610 And pyment taken by cred is full mrp 1910",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Got used bag pf coach worth Rs.35000/- still not got refund yet",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 15,
+      "relevance_share": 0.541,
+      "score": 282.0,
+      "per_app_observation": "The group is heavily skewed towards Myntra, which accounts for the vast majority of the records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Delivery and Product Quality Issues",
+      "summary": "Users report receiving incorrect or low-quality items, facing difficulties with returns, and experiencing problems with delivery partners and address handling.",
+      "review_count": 483,
+      "pct_of_corpus": 3.6,
+      "avg_rating": 1.24,
+      "per_app": {
+        "Myntra": 94,
+        "AJIO": 211,
+        "Nykaa Fashion": 178
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Hindi/Hinglish delivery and courier complaints — post-purchase.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "wrong product delivered karta hai or return nhi leta hai",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Just bad stuff keeps on getting bad stuff even aftr spending 4-5k",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "address me. dikkat hota h ganw tak ni jata hai",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 23,
+      "relevance_share": 0.555,
+      "score": 268.0,
+      "per_app_observation": "",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Positive Service and Product Quality",
+      "summary": "The records predominantly express satisfaction with the quality, affordability, and genuine nature of the products, as well as praise for the cooperative and efficient customer service provided by specific support staff.",
+      "review_count": 165,
+      "pct_of_corpus": 1.2,
+      "avg_rating": 4.61,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 1,
+        "Nykaa Fashion": 164
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Generic positive app review, no decision content.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Nykaa fashion is very good quality all in prodect",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Very cooperative man (Kashif Ansari). Simply help me with returns with any unnecessary questions n hurdles",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "𝐍𝐢𝐜𝐞 𝐠𝐢𝐧𝐮𝐧𝐞 𝐩𝐫𝐨𝐝𝐮𝐜𝐭𝐬 𝐢𝐧 𝐚𝐟𝐨𝐫𝐝𝐚𝐛𝐥𝐞 𝐩𝐫𝐢𝐜𝐞 𝐰𝐢𝐭𝐡 𝐞𝐱𝐜𝐞𝐥𝐞𝐧𝐭 𝐬𝐞𝐫𝐯𝐢𝐜𝐞",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 20,
+      "relevance_share": 0.733,
+      "score": 121.0,
+      "per_app_observation": "The group is overwhelmingly composed of records for Nykaa Fashion.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "General Positive Feedback",
+      "summary": "Users express satisfaction with the platform's quality, offers, and customer service, while some inquire about seller requirements or suggest additional features.",
+      "review_count": 111,
+      "pct_of_corpus": 0.8,
+      "avg_rating": 4.6,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 0,
+        "Nykaa Fashion": 111
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "General satisfaction with no decision content.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Nykaa fashion is very good quality all in prodect",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Good platform. Thankyouu for giveing me best offer at my first order thankyouu nykaaa",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Can we become a seller on nykaa fashion. If we can what are the requirements",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 13,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "All records are from Nykaa Fashion.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "General Positive Shopping Experiences",
+      "summary": "Users express satisfaction with Myntra's product variety, quality, and reliability, highlighting smooth returns and timely delivery. Some reviews mention specific regional reliability or improvements in collection quality over time.",
+      "review_count": 107,
+      "pct_of_corpus": 0.8,
+      "avg_rating": 4.92,
+      "per_app": {
+        "Myntra": 107,
+        "AJIO": 0,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "General Myntra praise, no decision content.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "The app is easy to use, offers a wide variety of fashion brands, and the product quality is generally excellent.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Most trusted online shopping for Manipur.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "I happily shopping here because of the vastness, glad Myntra didn't disappoint when it comes to COLLECTION",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 31,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "All records in this group are from the Myntra app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Product Quality and Affordability",
+      "summary": "Users express satisfaction with Myntra, specifically highlighting the high quality of branded products and their affordable pricing.",
+      "review_count": 59,
+      "pct_of_corpus": 0.4,
+      "avg_rating": 4.88,
+      "per_app": {
+        "Myntra": 59,
+        "AJIO": 0,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "General satisfaction, no decision content.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "the quality of the product is awesome",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "I got branded clothes at affordable price",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "product quality always good. original brand it deliver",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 27,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "All records in this group are from the Myntra app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Positive Shopping Experience",
+      "summary": "Users describe the app as easy to use with a wide variety of products, attractive discounts, and smooth return processes. Most reviews highlight the reliability of the platform for fashion and lifestyle shopping.",
+      "review_count": 41,
+      "pct_of_corpus": 0.3,
+      "avg_rating": 4.93,
+      "per_app": {
+        "Myntra": 36,
+        "AJIO": 3,
+        "Nykaa Fashion": 2
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Generic positive app review, no decision content.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Excellent shopping experience! The app is easy to use, offers a wide variety of products, fast delivery, genuine quality, and smooth returns/exchanges.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "The app has a good variety of products and attractive discounts, but delivery and customer support can be improved.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Amazing app, great discounts and good quality products. Highly recommended!",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 66,
+      "relevance_share": 0.756,
+      "score": 31.0,
+      "per_app_observation": "The group is heavily skewed toward Myntra, which accounts for 36 of the 41 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Resale of Unused Fashion Items",
+      "summary": "These forum posts are advertisements for selling new or lightly used clothing, accessories, and beauty products purchased from retailers like Myntra and Ajio. The sellers emphasize that the items are unused or in good condition and often provide details on original purchase sources and shipping options.",
+      "review_count": 27,
+      "pct_of_corpus": 0.2,
+      "avg_rating": null,
+      "per_app": {
+        "Myntra": 19,
+        "AJIO": 8,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Other - unrelated",
+      "mapping_rationale": "Secondhand resale posts — not a purchase-decision narrative on the platform.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Selling Daniel Klein watch - New and Unused Bought from myntra. Never used. Never worn. All tags intact.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Selling this top I love this top but it’s not my size so I’m trying to sell it. This top is from stylecast, bought it from Myntra also I’ve never worn it, only tried.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Selling this dressberry denim shirt dress - bought it off Myntra but I have never ever worn it, it's brand new.",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 2,
+      "relevance_share": 0.963,
+      "score": 26.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which is mentioned in 19 of the 27 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Product Quality and Design Praise",
+      "summary": "Users express satisfaction with the aesthetic appeal, fabric comfort, and stitching quality of the clothing items purchased.",
+      "review_count": 311,
+      "pct_of_corpus": 2.3,
+      "avg_rating": 4.83,
+      "per_app": {
+        "Myntra": 203,
+        "AJIO": 72,
+        "Nykaa Fashion": 36
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Buyers confirming quality, comfort and FIT after receipt. This is the uncertainty the wishlist stall is made of, observed resolved post-hoc — evidence of what a cleared fit doubt sounds like.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "nice product and quality of products is very good",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Easy breezy and comfortable and soft fabric",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "A very beautiful dress, perfect stich",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score+relevance",
+      "track": "full",
+      "cluster_id": 60,
+      "relevance_share": 0.791,
+      "score": 246.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which accounts for the majority of the records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Delivery and Platform Charges",
+      "summary": "Users express dissatisfaction with additional fees such as platform charges and cash on delivery charges, or mention how delivery charges are waived through app features.",
+      "review_count": 197,
+      "pct_of_corpus": 1.5,
+      "avg_rating": 2.3,
+      "per_app": {
+        "Myntra": 39,
+        "AJIO": 104,
+        "Nykaa Fashion": 54
+      },
+      "funnel_gate": "Convert",
+      "mapping_rationale": "COD, platform and delivery fees added at the final step — a checkout-stage cost that blocks conversion after intent exists.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "very bad this app charges extra money like platform charge Cash on delivery charge 29₹",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "रोज स्पिन करने पर पैसे मिलते है डिलवरी चार्ज जीरो हो जाता है",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "thank you thank you thank you thank you thank you thank you thank you thank cash on delivery dene ke liye kaun si train ki train ki train kitne baje",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score",
+      "track": "full",
+      "cluster_id": 25,
+      "relevance_share": 0.345,
+      "score": 68.0,
+      "per_app_observation": "",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Product Quality and Value",
+      "summary": "Users express satisfaction with the quality, price, and utility of products purchased through the apps, noting good value for money and effective performance.",
+      "review_count": 121,
+      "pct_of_corpus": 0.9,
+      "avg_rating": 4.81,
+      "per_app": {
+        "Myntra": 90,
+        "AJIO": 16,
+        "Nykaa Fashion": 15
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Quality-versus-price confirmation after receipt.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "nice product and quality of products is very good",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "very less price but some are stocking out soon.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Best tifin. Very compact , spacious and excellent quality",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 43,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which accounts for 90 of the 121 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "High Product Pricing",
+      "summary": "Users complain that products on the apps are too expensive, lack discounts, and are not worth the price compared to other platforms.",
+      "review_count": 106,
+      "pct_of_corpus": 0.8,
+      "avg_rating": 1.82,
+      "per_app": {
+        "Myntra": 15,
+        "AJIO": 23,
+        "Nykaa Fashion": 68
+      },
+      "funnel_gate": "Convert",
+      "mapping_rationale": "Price judged too high versus alternatives. Intent exists; the price threshold blocks the final step.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "bad Quality products items and too much expensive as comparison to other apps",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Very very very very very very very costly",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "no offers and the price seems to be not worth",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score+relevance",
+      "track": "full",
+      "cluster_id": 18,
+      "relevance_share": 0.821,
+      "score": 87.0,
+      "per_app_observation": "The group skews heavily toward Nykaa Fashion, which accounts for 68 of the 106 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Fashion product inquiries",
+      "summary": "The records consist of requests for clothing and accessory recommendations, style advice, and personal product experiences related to apparel.",
+      "review_count": 84,
+      "pct_of_corpus": 0.6,
+      "avg_rating": 4.0,
+      "per_app": {
+        "Myntra": 57,
+        "AJIO": 26,
+        "Nykaa Fashion": 1
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Users actively seeking recommendations on budget, quality and sizing before buying — uncertainty being resolved through others rather than the product surface.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Looking for affordable pure cotton kurta set brands",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "help regarding outfit for college fest",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "What gift should i get myself?",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score+relevance",
+      "track": "full",
+      "cluster_id": 13,
+      "relevance_share": 0.976,
+      "score": 82.0,
+      "per_app_observation": "The group heavily references Myntra, with the majority of mentions tied to that app.",
+      "model_used": "groq/openai/gpt-oss-120b"
+    },
+    {
+      "theme_name": "Outfit details and styling",
+      "summary": "These records consist of forum posts where users share details about their recent outfits, specifying the brands and retailers for individual clothing items. The content focuses on describing specific ensembles for various occasions such as events, road trips, or daily wear.",
+      "review_count": 78,
+      "pct_of_corpus": 0.6,
+      "avg_rating": null,
+      "per_app": {
+        "Myntra": 65,
+        "AJIO": 13,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Outfit/fit-check posts where users source and validate items socially; social validation is an uncertainty axis the brief names.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "fits i wore recently outfit details: 1) top and jeans from myntra, heels from a local store, earrings from shein",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Styling tips for road trip girl core I am a big fan of comfy + minimalist clothing.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Today’s gym fit, powered by endorphins! Top: Ajio Leggings: Myntra",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "score+relevance",
+      "track": "full",
+      "cluster_id": 12,
+      "relevance_share": 0.949,
+      "score": 74.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which is mentioned in 65 of the 78 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Discounts and Coupon Offers",
+      "summary": "Users highlight the availability of frequent sales, coupons, and significant discounts as a primary feature of the apps.",
+      "review_count": 76,
+      "pct_of_corpus": 0.6,
+      "avg_rating": 4.47,
+      "per_app": {
+        "Myntra": 31,
+        "AJIO": 23,
+        "Nykaa Fashion": 22
+      },
+      "funnel_gate": "Convert",
+      "mapping_rationale": "Discounts and coupons as the trigger that finally closes the purchase — the classic price-watch conversion event.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "very good app, with good quality products and good discount",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "I've never received this much discount on an online purchase before.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Frequent sales and great coupon discounts make it highly affordable.",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 23,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Outfit and purchase details",
+      "summary": "The records consist of users describing clothing or accessory outfits they are wearing or have bought, often listing the brands and where each piece was purchased.",
+      "review_count": 75,
+      "pct_of_corpus": 0.6,
+      "avg_rating": null,
+      "per_app": {
+        "Myntra": 62,
+        "AJIO": 13,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Outfit posts sourcing and socially validating items before/around purchase.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "top and jeans from myntra, heels from a local store",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Got it for 1k in Dec 2022 in a Myntra sale.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Top: Ajio Leggings: Myntra",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 6,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The posts predominantly mention Myntra as the purchase source.",
+      "model_used": "groq/openai/gpt-oss-120b"
+    },
+    {
+      "theme_name": "Product Quality and Value",
+      "summary": "Users express satisfaction with the quality of products purchased on Myntra, often noting that the items are durable or original, while some mention high prices or compare costs with other platforms.",
+      "review_count": 63,
+      "pct_of_corpus": 0.5,
+      "avg_rating": 4.9,
+      "per_app": {
+        "Myntra": 62,
+        "AJIO": 1,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Quality-relative-to-price confirmation post-receipt.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "i receiving good quality products on shopping on myntra platform",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "the quality of it so good I have been using it for over a year it is still in goog condition",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "for original and best quality product, go to Myntra...",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 46,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The group is overwhelmingly composed of reviews for the Myntra app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Positive App and Clothing Quality",
+      "summary": "Users express satisfaction with the shopping apps, highlighting the quality of fabrics, variety of trendy options, and overall reliability for finding clothing.",
+      "review_count": 62,
+      "pct_of_corpus": 0.5,
+      "avg_rating": 4.87,
+      "per_app": {
+        "Myntra": 40,
+        "AJIO": 14,
+        "Nykaa Fashion": 8
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Praise specifically for fabric and clothing quality — the quality uncertainty resolved.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Really good shopping app and quality of clothes is also good",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "very good, trusted and authentic application for styling",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "fabric is good but brand is too expensive. fond of fabrics displayed in this app.",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 26,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which accounts for 40 of the 62 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Positive Return and Exchange Experiences",
+      "summary": "Users praise the ease and convenience of the return and exchange policies, highlighting cooperative customer support staff who handle requests without unnecessary hurdles.",
+      "review_count": 52,
+      "pct_of_corpus": 0.4,
+      "avg_rating": 4.88,
+      "per_app": {
+        "Myntra": 38,
+        "AJIO": 3,
+        "Nykaa Fashion": 11
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Return/exchange ease and support — risk-reduction that neutralises fit uncertainty.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "Simply help me with returns with any unnecessary questions n hurdles",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Nicley handled the order returns.",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 29,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which accounts for 38 of the 52 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Affordable Prices and Quality",
+      "summary": "Users praise the app for offering good quality products at reasonable or affordable prices, often highlighting specific offers or value compared to other platforms.",
+      "review_count": 51,
+      "pct_of_corpus": 0.4,
+      "avg_rating": 4.84,
+      "per_app": {
+        "Myntra": 35,
+        "AJIO": 9,
+        "Nykaa Fashion": 7
+      },
+      "funnel_gate": "Convert",
+      "mapping_rationale": "Affordability judged acceptable — the price condition being met at the point of purchase.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "better quality in affordable rates",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Good quality and reasonable price will get in this app",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "great articles with affordable prices",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "flagged-subset",
+      "track": "flagged",
+      "cluster_id": 57,
+      "relevance_share": 1.0,
+      "score": 0.0,
+      "per_app_observation": "The group skews heavily toward Myntra, which accounts for 35 of the 51 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Easy Returns and Quality",
+      "summary": "Users praise the ease and speed of the return and exchange process, often noting that refunds are processed quickly. Many also mention the good quality of products and the convenience of the overall ordering experience.",
+      "review_count": 48,
+      "pct_of_corpus": 0.4,
+      "avg_rating": 4.9,
+      "per_app": {
+        "Myntra": 37,
+        "AJIO": 3,
+        "Nykaa Fashion": 8
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Easy returns lower the perceived risk of committing, which is how a fit/size doubt gets neutralised without resolving it.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "good quality and easy to return policy also",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Really good deals, and extremely fast returns.",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 64,
+      "relevance_share": 0.917,
+      "score": 44.0,
+      "per_app_observation": "The group is heavily skewed towards Myntra, which accounts for 37 of the 48 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Positive Product Quality and Value",
+      "summary": "These records express high satisfaction with the quality, comfort, and appearance of various products, frequently noting that the items look as pictured and offer good value for money.",
+      "review_count": 27,
+      "pct_of_corpus": 0.2,
+      "avg_rating": 4.96,
+      "per_app": {
+        "Myntra": 27,
+        "AJIO": 0,
+        "Nykaa Fashion": 0
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Post-purchase quality confirmation; the resolved end-state of a quality uncertainty.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "The product quality is good, the material feels comfortable, and it looks exactly like the pictures.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "The quality of the slippers is outstanding. They feel premium, durable, sturdy, and very well made.",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Excellent quality, premium look, comfortable to wear, and worth the price.",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 56,
+      "relevance_share": 0.963,
+      "score": 26.0,
+      "per_app_observation": "All records in this group are from the Myntra app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Inconsistent Product Pricing",
+      "summary": "Users report that product prices frequently increase or change unexpectedly between browsing, wishlisting, and checkout, often differing from the initially displayed offer price.",
+      "review_count": 26,
+      "pct_of_corpus": 0.2,
+      "avg_rating": 1.92,
+      "per_app": {
+        "Myntra": 6,
+        "AJIO": 14,
+        "Nykaa Fashion": 6
+      },
+      "funnel_gate": "Return",
+      "mapping_rationale": "Users report prices RISING after an item is wishlisted or clicked. This is the return-to-saved-item gate failing: the user comes back and the item has changed against them, which actively punishes the save behaviour the metric depends on.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "first they say offer price is 1400 rs then when you click on product all of sudden it goes to 2100 bad experience",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "every time price will change while placing orders",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "if i put anything on wishlist today the next day price of the product will increase",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 38,
+      "relevance_share": 0.885,
+      "score": 23.0,
+      "per_app_observation": "The group contains records from Myntra, AJIO, and Nykaa Fashion, with AJIO having the highest count.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Easy Returns and Exchanges",
+      "summary": "Users praise the app for its user-friendly interface and specifically highlight the convenience of its return, exchange, and refund policies.",
+      "review_count": 20,
+      "pct_of_corpus": 0.1,
+      "avg_rating": 5.0,
+      "per_app": {
+        "Myntra": 19,
+        "AJIO": 0,
+        "Nykaa Fashion": 1
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Return/exchange ease specifically for SIZING issues — directly de-risks the fit uncertainty.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "good app with easy returns and exchanges facilities..",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "Refund processes instantly. Size and style exchange options offer convenience",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "return an exchange policy amazing",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 65,
+      "relevance_share": 1.0,
+      "score": 20.0,
+      "per_app_observation": "The group is heavily skewed towards Myntra, with 19 out of 20 records originating from that app.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    },
+    {
+      "theme_name": "Product matches images",
+      "summary": "Users report that the products they received are identical to the images and descriptions shown on the platform, specifically noting accurate colors and quality.",
+      "review_count": 20,
+      "pct_of_corpus": 0.1,
+      "avg_rating": 4.65,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 3,
+        "Nykaa Fashion": 4
+      },
+      "funnel_gate": "Resolve",
+      "mapping_rationale": "Item matched the photos — resolution of the colour-accuracy / model-reference uncertainty.",
+      "what_this_means": "",
+      "category_mentioned": {},
+      "quotes": [
+        {
+          "text": "the quality of the product is as good as shown in the image",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "It’s just as shown in pics",
+          "validation_status": "Validated"
+        },
+        {
+          "text": "exect colour design and everything is the same as the picture which I shown",
+          "validation_status": "Validated"
+        }
+      ],
+      "selection_path": "relevance",
+      "track": "full",
+      "cluster_id": 48,
+      "relevance_share": 0.75,
+      "score": 15.0,
+      "per_app_observation": "The group skews towards Myntra, which accounts for 13 of the 20 records.",
+      "model_used": "groq/qwen/qwen3.8-27b"
+    }
+  ],
+  "all_clusters": [
+    {
+      "id": 22,
+      "size": 4793,
+      "relevance_share": 0.628,
+      "avg_rating": 1.15,
+      "per_app": {
+        "Myntra": 605,
+        "AJIO": 1686,
+        "Nykaa Fashion": 2502
+      }
+    },
+    {
+      "id": 1,
+      "size": 1250,
+      "relevance_share": 0.907,
+      "avg_rating": 1.07,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 1,
+        "Nykaa Fashion": 1246
+      }
+    },
+    {
+      "id": 7,
+      "size": 1006,
+      "relevance_share": 0.641,
+      "avg_rating": 1.08,
+      "per_app": {
+        "Myntra": 4,
+        "AJIO": 997,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 11,
+      "size": 889,
+      "relevance_share": 0.507,
+      "avg_rating": 4.89,
+      "per_app": {
+        "Myntra": 876,
+        "AJIO": 6,
+        "Nykaa Fashion": 7
+      }
+    },
+    {
+      "id": 15,
+      "size": 521,
+      "relevance_share": 0.541,
+      "avg_rating": 1.21,
+      "per_app": {
+        "Myntra": 498,
+        "AJIO": 10,
+        "Nykaa Fashion": 13
+      }
+    },
+    {
+      "id": 23,
+      "size": 483,
+      "relevance_share": 0.555,
+      "avg_rating": 1.24,
+      "per_app": {
+        "Myntra": 94,
+        "AJIO": 211,
+        "Nykaa Fashion": 178
+      }
+    },
+    {
+      "id": 60,
+      "size": 311,
+      "relevance_share": 0.791,
+      "avg_rating": 4.83,
+      "per_app": {
+        "Myntra": 203,
+        "AJIO": 72,
+        "Nykaa Fashion": 36
+      }
+    },
+    {
+      "id": 20,
+      "size": 165,
+      "relevance_share": 0.733,
+      "avg_rating": 4.61,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 1,
+        "Nykaa Fashion": 164
+      }
+    },
+    {
+      "id": 18,
+      "size": 106,
+      "relevance_share": 0.821,
+      "avg_rating": 1.82,
+      "per_app": {
+        "Myntra": 15,
+        "AJIO": 23,
+        "Nykaa Fashion": 68
+      }
+    },
+    {
+      "id": 13,
+      "size": 84,
+      "relevance_share": 0.976,
+      "avg_rating": 4.0,
+      "per_app": {
+        "Myntra": 57,
+        "AJIO": 26,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 12,
+      "size": 78,
+      "relevance_share": 0.949,
+      "avg_rating": null,
+      "per_app": {
+        "Myntra": 65,
+        "AJIO": 13,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 25,
+      "size": 197,
+      "relevance_share": 0.345,
+      "avg_rating": 2.3,
+      "per_app": {
+        "Myntra": 39,
+        "AJIO": 104,
+        "Nykaa Fashion": 54
+      }
+    },
+    {
+      "id": 0,
+      "size": 144,
+      "relevance_share": 0.465,
+      "avg_rating": 4.67,
+      "per_app": {
+        "Myntra": 5,
+        "AJIO": 138,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 71,
+      "size": 146,
+      "relevance_share": 0.377,
+      "avg_rating": 4.85,
+      "per_app": {
+        "Myntra": 94,
+        "AJIO": 32,
+        "Nykaa Fashion": 20
+      }
+    },
+    {
+      "id": 39,
+      "size": 63,
+      "relevance_share": 0.714,
+      "avg_rating": 1.44,
+      "per_app": {
+        "Myntra": 2,
+        "AJIO": 18,
+        "Nykaa Fashion": 43
+      }
+    },
+    {
+      "id": 64,
+      "size": 48,
+      "relevance_share": 0.917,
+      "avg_rating": 4.9,
+      "per_app": {
+        "Myntra": 37,
+        "AJIO": 3,
+        "Nykaa Fashion": 8
+      }
+    },
+    {
+      "id": 63,
+      "size": 75,
+      "relevance_share": 0.493,
+      "avg_rating": 4.83,
+      "per_app": {
+        "Myntra": 65,
+        "AJIO": 4,
+        "Nykaa Fashion": 6
+      }
+    },
+    {
+      "id": 76,
+      "size": 157,
+      "relevance_share": 0.21,
+      "avg_rating": 4.89,
+      "per_app": {
+        "Myntra": 124,
+        "AJIO": 19,
+        "Nykaa Fashion": 14
+      }
+    },
+    {
+      "id": 66,
+      "size": 41,
+      "relevance_share": 0.756,
+      "avg_rating": 4.93,
+      "per_app": {
+        "Myntra": 36,
+        "AJIO": 3,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 2,
+      "size": 27,
+      "relevance_share": 0.963,
+      "avg_rating": null,
+      "per_app": {
+        "Myntra": 19,
+        "AJIO": 8,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 56,
+      "size": 27,
+      "relevance_share": 0.963,
+      "avg_rating": 4.96,
+      "per_app": {
+        "Myntra": 27,
+        "AJIO": 0,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 52,
+      "size": 96,
+      "relevance_share": 0.271,
+      "avg_rating": 4.14,
+      "per_app": {
+        "Myntra": 10,
+        "AJIO": 44,
+        "Nykaa Fashion": 42
+      }
+    },
+    {
+      "id": 28,
+      "size": 55,
+      "relevance_share": 0.418,
+      "avg_rating": 2.67,
+      "per_app": {
+        "Myntra": 4,
+        "AJIO": 30,
+        "Nykaa Fashion": 21
+      }
+    },
+    {
+      "id": 38,
+      "size": 26,
+      "relevance_share": 0.885,
+      "avg_rating": 1.92,
+      "per_app": {
+        "Myntra": 6,
+        "AJIO": 14,
+        "Nykaa Fashion": 6
+      }
+    },
+    {
+      "id": 65,
+      "size": 20,
+      "relevance_share": 1.0,
+      "avg_rating": 5.0,
+      "per_app": {
+        "Myntra": 19,
+        "AJIO": 0,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 29,
+      "size": 37,
+      "relevance_share": 0.486,
+      "avg_rating": 2.76,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 21,
+        "Nykaa Fashion": 15
+      }
+    },
+    {
+      "id": 61,
+      "size": 48,
+      "relevance_share": 0.333,
+      "avg_rating": 4.9,
+      "per_app": {
+        "Myntra": 31,
+        "AJIO": 12,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 21,
+      "size": 24,
+      "relevance_share": 0.667,
+      "avg_rating": 1.25,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 12,
+        "Nykaa Fashion": 11
+      }
+    },
+    {
+      "id": 27,
+      "size": 16,
+      "relevance_share": 0.938,
+      "avg_rating": 2.46,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 13,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 48,
+      "size": 20,
+      "relevance_share": 0.75,
+      "avg_rating": 4.65,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 3,
+        "Nykaa Fashion": 4
+      }
+    },
+    {
+      "id": 5,
+      "size": 57,
+      "relevance_share": 0.211,
+      "avg_rating": 1.8,
+      "per_app": {
+        "Myntra": 54,
+        "AJIO": 1,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 72,
+      "size": 39,
+      "relevance_share": 0.308,
+      "avg_rating": 4.92,
+      "per_app": {
+        "Myntra": 33,
+        "AJIO": 4,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 73,
+      "size": 42,
+      "relevance_share": 0.286,
+      "avg_rating": 4.88,
+      "per_app": {
+        "Myntra": 38,
+        "AJIO": 3,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 67,
+      "size": 17,
+      "relevance_share": 0.706,
+      "avg_rating": 3.59,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 8,
+        "Nykaa Fashion": 6
+      }
+    },
+    {
+      "id": 30,
+      "size": 21,
+      "relevance_share": 0.571,
+      "avg_rating": 2.0,
+      "per_app": {
+        "Myntra": 2,
+        "AJIO": 17,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 3,
+      "size": 13,
+      "relevance_share": 0.846,
+      "avg_rating": 4.0,
+      "per_app": {
+        "Myntra": 8,
+        "AJIO": 5,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 78,
+      "size": 20,
+      "relevance_share": 0.55,
+      "avg_rating": 4.9,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 3,
+        "Nykaa Fashion": 4
+      }
+    },
+    {
+      "id": 57,
+      "size": 15,
+      "relevance_share": 0.733,
+      "avg_rating": 5.0,
+      "per_app": {
+        "Myntra": 8,
+        "AJIO": 5,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 4,
+      "size": 36,
+      "relevance_share": 0.306,
+      "avg_rating": 1.0,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 36,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 70,
+      "size": 11,
+      "relevance_share": 0.909,
+      "avg_rating": 5.0,
+      "per_app": {
+        "Myntra": 9,
+        "AJIO": 1,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 49,
+      "size": 26,
+      "relevance_share": 0.385,
+      "avg_rating": 3.35,
+      "per_app": {
+        "Myntra": 5,
+        "AJIO": 5,
+        "Nykaa Fashion": 16
+      }
+    },
+    {
+      "id": 17,
+      "size": 10,
+      "relevance_share": 1.0,
+      "avg_rating": 1.5,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 0,
+        "Nykaa Fashion": 10
+      }
+    },
+    {
+      "id": 10,
+      "size": 10,
+      "relevance_share": 0.9,
+      "avg_rating": 1.67,
+      "per_app": {
+        "Myntra": 6,
+        "AJIO": 4,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 41,
+      "size": 30,
+      "relevance_share": 0.3,
+      "avg_rating": 1.77,
+      "per_app": {
+        "Myntra": 5,
+        "AJIO": 18,
+        "Nykaa Fashion": 7
+      }
+    },
+    {
+      "id": 19,
+      "size": 16,
+      "relevance_share": 0.562,
+      "avg_rating": 4.44,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 1,
+        "Nykaa Fashion": 15
+      }
+    },
+    {
+      "id": 6,
+      "size": 15,
+      "relevance_share": 0.533,
+      "avg_rating": 1.53,
+      "per_app": {
+        "Myntra": 7,
+        "AJIO": 7,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 36,
+      "size": 51,
+      "relevance_share": 0.157,
+      "avg_rating": 1.94,
+      "per_app": {
+        "Myntra": 8,
+        "AJIO": 32,
+        "Nykaa Fashion": 11
+      }
+    },
+    {
+      "id": 31,
+      "size": 37,
+      "relevance_share": 0.216,
+      "avg_rating": 1.65,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 27,
+        "Nykaa Fashion": 9
+      }
+    },
+    {
+      "id": 75,
+      "size": 15,
+      "relevance_share": 0.467,
+      "avg_rating": 5.0,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 1,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 74,
+      "size": 11,
+      "relevance_share": 0.636,
+      "avg_rating": 4.82,
+      "per_app": {
+        "Myntra": 6,
+        "AJIO": 2,
+        "Nykaa Fashion": 3
+      }
+    },
+    {
+      "id": 69,
+      "size": 31,
+      "relevance_share": 0.226,
+      "avg_rating": 4.9,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 30,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 35,
+      "size": 32,
+      "relevance_share": 0.219,
+      "avg_rating": 1.44,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 32,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 8,
+      "size": 14,
+      "relevance_share": 0.429,
+      "avg_rating": 4.86,
+      "per_app": {
+        "Myntra": 14,
+        "AJIO": 0,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 77,
+      "size": 19,
+      "relevance_share": 0.316,
+      "avg_rating": 4.53,
+      "per_app": {
+        "Myntra": 15,
+        "AJIO": 2,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 53,
+      "size": 11,
+      "relevance_share": 0.545,
+      "avg_rating": 4.91,
+      "per_app": {
+        "Myntra": 8,
+        "AJIO": 2,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 55,
+      "size": 33,
+      "relevance_share": 0.182,
+      "avg_rating": 3.76,
+      "per_app": {
+        "Myntra": 2,
+        "AJIO": 15,
+        "Nykaa Fashion": 16
+      }
+    },
+    {
+      "id": 34,
+      "size": 14,
+      "relevance_share": 0.357,
+      "avg_rating": 4.86,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 1,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 33,
+      "size": 41,
+      "relevance_share": 0.122,
+      "avg_rating": 1.68,
+      "per_app": {
+        "Myntra": 5,
+        "AJIO": 33,
+        "Nykaa Fashion": 3
+      }
+    },
+    {
+      "id": 42,
+      "size": 41,
+      "relevance_share": 0.098,
+      "avg_rating": 1.93,
+      "per_app": {
+        "Myntra": 8,
+        "AJIO": 32,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 16,
+      "size": 26,
+      "relevance_share": 0.154,
+      "avg_rating": 1.12,
+      "per_app": {
+        "Myntra": 5,
+        "AJIO": 16,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 51,
+      "size": 10,
+      "relevance_share": 0.4,
+      "avg_rating": 4.5,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 4,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 50,
+      "size": 14,
+      "relevance_share": 0.286,
+      "avg_rating": 4.14,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 12,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 58,
+      "size": 17,
+      "relevance_share": 0.176,
+      "avg_rating": 4.76,
+      "per_app": {
+        "Myntra": 15,
+        "AJIO": 1,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 46,
+      "size": 46,
+      "relevance_share": 0.065,
+      "avg_rating": 1.59,
+      "per_app": {
+        "Myntra": 4,
+        "AJIO": 37,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 43,
+      "size": 12,
+      "relevance_share": 0.25,
+      "avg_rating": 1.92,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 6,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 14,
+      "size": 15,
+      "relevance_share": 0.133,
+      "avg_rating": 1.53,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 2,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 24,
+      "size": 14,
+      "relevance_share": 0.143,
+      "avg_rating": 1.21,
+      "per_app": {
+        "Myntra": 2,
+        "AJIO": 12,
+        "Nykaa Fashion": 0
+      }
+    },
+    {
+      "id": 59,
+      "size": 10,
+      "relevance_share": 0.2,
+      "avg_rating": 4.8,
+      "per_app": {
+        "Myntra": 6,
+        "AJIO": 3,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 47,
+      "size": 26,
+      "relevance_share": 0.077,
+      "avg_rating": 1.77,
+      "per_app": {
+        "Myntra": 1,
+        "AJIO": 21,
+        "Nykaa Fashion": 4
+      }
+    },
+    {
+      "id": 9,
+      "size": 14,
+      "relevance_share": 0.143,
+      "avg_rating": 1.57,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 4,
+        "Nykaa Fashion": 7
+      }
+    },
+    {
+      "id": 80,
+      "size": 18,
+      "relevance_share": 0.056,
+      "avg_rating": 4.83,
+      "per_app": {
+        "Myntra": 13,
+        "AJIO": 3,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 79,
+      "size": 70,
+      "relevance_share": 0.014,
+      "avg_rating": 4.83,
+      "per_app": {
+        "Myntra": 48,
+        "AJIO": 13,
+        "Nykaa Fashion": 9
+      }
+    },
+    {
+      "id": 62,
+      "size": 11,
+      "relevance_share": 0.091,
+      "avg_rating": 5.0,
+      "per_app": {
+        "Myntra": 9,
+        "AJIO": 1,
+        "Nykaa Fashion": 1
+      }
+    },
+    {
+      "id": 40,
+      "size": 12,
+      "relevance_share": 0.083,
+      "avg_rating": 4.83,
+      "per_app": {
+        "Myntra": 4,
+        "AJIO": 4,
+        "Nykaa Fashion": 4
+      }
+    },
+    {
+      "id": 68,
+      "size": 29,
+      "relevance_share": 0.034,
+      "avg_rating": 4.86,
+      "per_app": {
+        "Myntra": 2,
+        "AJIO": 22,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 26,
+      "size": 16,
+      "relevance_share": 0.062,
+      "avg_rating": 2.0,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 14,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 37,
+      "size": 15,
+      "relevance_share": 0.067,
+      "avg_rating": 1.4,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 13,
+        "Nykaa Fashion": 2
+      }
+    },
+    {
+      "id": 45,
+      "size": 27,
+      "relevance_share": 0.0,
+      "avg_rating": 1.63,
+      "per_app": {
+        "Myntra": 5,
+        "AJIO": 17,
+        "Nykaa Fashion": 5
+      }
+    },
+    {
+      "id": 54,
+      "size": 23,
+      "relevance_share": 0.0,
+      "avg_rating": 4.39,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 8,
+        "Nykaa Fashion": 12
+      }
+    },
+    {
+      "id": 44,
+      "size": 14,
+      "relevance_share": 0.0,
+      "avg_rating": 4.93,
+      "per_app": {
+        "Myntra": 3,
+        "AJIO": 7,
+        "Nykaa Fashion": 4
+      }
+    },
+    {
+      "id": 32,
+      "size": 18,
+      "relevance_share": 0.0,
+      "avg_rating": 1.33,
+      "per_app": {
+        "Myntra": 0,
+        "AJIO": 14,
+        "Nykaa Fashion": 4
+      }
+    }
+  ],
+  "noise": {
+    "count": 1414,
+    "pct": 10.4
+  },
+  "resolution_template": {
+    "lexicon_version": "2026-08-20.2",
+    "summary": "Per uncertainty axis: how often users describe a purchase decision closing, versus how often they describe it stalling. Axes are re-derived from the live lexicon (2026-08-20.2), never read from stored labels.",
+    "by_axis": {
+      "Price": {
+        "axis": "Price",
+        "resolved_count": 18,
+        "stalled_count": 13,
+        "resolution_rate": 0.58,
+        "resolved_quotes": [
+          "Myntra cash use now requires minimum order value ? Honestly, I've abused the myntra cash for 5-6 times now. I used it and ordered the products that cost almost as much as the myntra cash value like 10",
+          "Trying to clear my shelf Selling a mixed bag of perfumes, all of them are EDPs except for the B&BW mist. Juliette has a Gun Mad Madame Tester (It’s an opaque bottle, have only used a few sprays) - ₹40",
+          "DECLUTTERING: Dressberry Denim Midi Shirt Dress- 450/- ( Size - S- M ) + Freebies! - Selling this dressberry denim shirt dress - bought it off Myntra but I have never ever worn it, it's brand new. - S",
+          "Declutterring Mugler, Minimalist, Lakmé, Maybelline, Bioderma | Makeup, Skincare, Fragrance + freebies | Lightly Used Used ChatGPT to format only. Pick any freebies you like! :) Swatches & freebies in",
+          "Selling this top I love this top but it’s not my size so I’m trying to sell it. This top is from stylecast, bought it from Myntra also I’ve never worn it, only tried. Size:M Price: 400+ shipping"
+        ],
+        "stalled_quotes": [
+          "Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Has anyone noticed that sales in myntra are just posters and nothing else. None of the items in my wishlist a",
+          "worst experience, literally stupid app,they show discount on product but whenever you try to order something,the order always gets delayed and after waiting for 10 to 15 days they cancel the order. wo",
+          "I had started myntra to use a few months back only. In my last order, I have ordered 6 items and in the exchange of one single otp, all the 6 items marked as delivered. although I received one order w",
+          "Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Has anyone noticed that sales in myntra are just posters and nothing else. None of the items in my wishlist a",
+          "Don't fall for their promotional offers! I downloaded the app because they advertised ₹1,000 cashback and ₹500 off on the first order. While the ₹500 instant discount worked fine, the promised ₹1,000 "
+        ],
+        "unresolved_gap": false
+      },
+      "Colour accuracy": {
+        "axis": "Colour accuracy",
+        "resolved_count": 7,
+        "stalled_count": 5,
+        "resolution_rate": 0.58,
+        "resolved_quotes": [
+          "Myntra cash use now requires minimum order value ? Honestly, I've abused the myntra cash for 5-6 times now. I used it and ordered the products that cost almost as much as the myntra cash value like 10",
+          "Declutterring Mugler, Minimalist, Lakmé, Maybelline, Bioderma | Makeup, Skincare, Fragrance + freebies | Lightly Used Used ChatGPT to format only. Pick any freebies you like! :) Swatches & freebies in",
+          "Declutterring Perfume, Skincare & Makeup + freebies | Mugler, Bioderma, Maybelline, Minimalist, Lakmé Used ChatGPT to **format only.** Pick any freebies you like! :) Swatches & freebies in images 2 an",
+          "Declutterring Makeup, Fragrance & Skincare | Bioderma, Mugler, Lakmé, Maybelline & Minimalist | Lightly Used / Basically New Used ChatGPT to format only. Pick any freebies you like! :) Swatches & free",
+          "Bought This Lulu & Sky Dress for a Night Event, but I'm Not Sure About the Color. Thoughts? bought this dress because I really like the style and silhouette. The fit is good, and even though it's a li"
+        ],
+        "stalled_quotes": [
+          "Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Has anyone noticed that sales in myntra are just posters and nothing else. None of the items in my wishlist a",
+          "Myntra Sales are just for namesake and none of the good items got any discounts whatsoever Has anyone noticed that sales in myntra are just posters and nothing else. None of the items in my wishlist a",
+          "For past few orders i have a really good experience. but now I had ordered 3 different color products, but I got same color. so I returned 2, and still waiting for my refund. its 10 days now, it is sa",
+          "worst experience this is my second order in ajio i returned the product due to bad quality and colour of the dress is is not similar as shown in the reference image and i returned the product and wait",
+          "Very disappointing experience with AJIO. AJIO claims to provide a hassle-free shopping, return and cancellation experience, but my actual experience has been completely different. The return and cance"
+        ],
+        "unresolved_gap": false
+      },
+      "Size": {
+        "axis": "Size",
+        "resolved_count": 11,
+        "stalled_count": 4,
+        "resolution_rate": 0.73,
+        "resolved_quotes": [
+          "DECLUTTERING: Dressberry Denim Midi Shirt Dress- 450/- ( Size - S- M ) + Freebies! - Selling this dressberry denim shirt dress - bought it off Myntra but I have never ever worn it, it's brand new. - S",
+          "Declutterring Mugler, Minimalist, Lakmé, Maybelline, Bioderma | Makeup, Skincare, Fragrance + freebies | Lightly Used Used ChatGPT to format only. Pick any freebies you like! :) Swatches & freebies in",
+          "Selling this top I love this top but it’s not my size so I’m trying to sell it. This top is from stylecast, bought it from Myntra also I’ve never worn it, only tried. Size:M Price: 400+ shipping",
+          "Declutterring Perfume, Skincare & Makeup + freebies | Mugler, Bioderma, Maybelline, Minimalist, Lakmé Used ChatGPT to **format only.** Pick any freebies you like! :) Swatches & freebies in images 2 an",
+          "Declutterring Makeup, Fragrance & Skincare | Bioderma, Mugler, Lakmé, Maybelline & Minimalist | Lightly Used / Basically New Used ChatGPT to format only. Pick any freebies you like! :) Swatches & free"
+        ],
+        "stalled_quotes": [
+          "I am extremely disappointed with the way my replacement request has been handled. I requested a replacement for my black jeans (Size 32 to Size 34) on 9 June, and despite waiting for more than a month",
+          "Minus Customer service & professionalism Since 1st November I am waiting for my wrong size to picked up & for that I have spoken to multiple advisors who promised me to pick up will happen the next da",
+          "Have order a decent amount of stuff from nykaa. Sometimes it's fine sometimes it doesn't look like what it's in the picture at all. Oredered a pair of jeans size 26 and it didn't fit me. Another pair,",
+          "Worst delivery service. I order a shoe on 26th May 2026 from nykaa fashion but the shoe size was way big for me so i applied for a order return and it’s been 10-12 days now that everyday the app would"
+        ],
+        "unresolved_gap": false
+      },
+      "Quality": {
+        "axis": "Quality",
+        "resolved_count": 8,
+        "stalled_count": 10,
+        "resolution_rate": 0.44,
+        "resolved_quotes": [
+          "Declutterring Mugler, Minimalist, Lakmé, Maybelline, Bioderma | Makeup, Skincare, Fragrance + freebies | Lightly Used Used ChatGPT to format only. Pick any freebies you like! :) Swatches & freebies in",
+          "Declutterring Perfume, Skincare & Makeup + freebies | Mugler, Bioderma, Maybelline, Minimalist, Lakmé Used ChatGPT to **format only.** Pick any freebies you like! :) Swatches & freebies in images 2 an",
+          "Declutterring Makeup, Fragrance & Skincare | Bioderma, Mugler, Lakmé, Maybelline & Minimalist | Lightly Used / Basically New Used ChatGPT to format only. Pick any freebies you like! :) Swatches & free",
+          "i bought it for the first time from ajio and it got a bad quality product and it's been 1.5 months but I did not receive my refund money. I will never buy anything from this app the service is really ",
+          "Worst app ever. I ordered shoes and tees from this app and I received very poor quality although I ordered it from very known brand but still it was very cheap and when I raised complaint I did not re"
+        ],
+        "stalled_quotes": [
+          "Is it just me or have others also noticed this? Not sure if this is the right place for this discussion but: I think the myntra beyond borders thing is entirely fake. They're making extremely cheap co",
+          "Pathetic Return policy. Never going to buy anything from myntra. After keeping waiting for 8 days for pickup of item. they cancelled and denied pickup bcoz they dont have people to pick it up. thrn wh",
+          "excellent waiting for the product to see the quality",
+          "worst experience this is my second order in ajio i returned the product due to bad quality and colour of the dress is is not similar as shown in the reference image and i returned the product and wait",
+          "ABSOLUTELY PATHETIC SERVICE – DO NOT TRUST THIS APP!. This is officially the worst online shopping experience I have ever had. I placed my orders on the 1st of June, and because there was no Cash on D"
+        ],
+        "unresolved_gap": false
+      },
+      "Returns": {
+        "axis": "Returns",
+        "resolved_count": 21,
+        "stalled_count": 83,
+        "resolution_rate": 0.2,
+        "resolved_quotes": [
+          "Declutterring Mugler, Minimalist, Lakmé, Maybelline, Bioderma | Makeup, Skincare, Fragrance + freebies | Lightly Used Used ChatGPT to format only. Pick any freebies you like! :) Swatches & freebies in",
+          "Declutterring Perfume, Skincare & Makeup + freebies | Mugler, Bioderma, Maybelline, Minimalist, Lakmé Used ChatGPT to **format only.** Pick any freebies you like! :) Swatches & freebies in images 2 an",
+          "Declutterring Makeup, Fragrance & Skincare | Bioderma, Mugler, Lakmé, Maybelline & Minimalist | Lightly Used / Basically New Used ChatGPT to format only. Pick any freebies you like! :) Swatches & free",
+          "Myntra's new system is incredibly frustrating – Fake delays, automatic cancellations, and useless support. Hey guys, just wanted to rant a bit and see if anyone else is facing this issue with Myntra l",
+          "I bought shoes for ₹1600 of United Colors of Benetton and got fake shoes. And I can't even return it because I bought it at a discount. Never expected to be cheated on myntra. I used to buy frequently"
+        ],
+        "stalled_quotes": [
+          "Myntra's return policy is complicated when you receive the wrong product. I have been waiting for days and still the issue is not getting resolved. Also their packaging is the worst.",
+          "Poor customer support from Myntra.I had ordered for a t shirt on 08.08.2026 and done the payment.Delivery date was showing 16 -18 Aug.The seller cancelled the order by themselves on 16th August citing",
+          "Very disappointing experience. My issue has been going on for almost a month. I received the wrong product and provided the product tag/code and invoice as evidence, but Myntra kept giving generic res",
+          "Lately it's been a very disappointing experience with myntra delivery n the return pick up handled by Ekart. The delivery guy wants us to act according to his convenience. Being adamant to deliver or ",
+          "I want to express my deep dissatisfaction with my purchases on myntra recently. I had to return my first order and you guys failed to pick it for almost 20 days then I ordered two trousers and one of "
+        ],
+        "unresolved_gap": false
+      },
+      "Styling": {
+        "axis": "Styling",
+        "resolved_count": 12,
+        "stalled_count": 2,
+        "resolution_rate": 0.86,
+        "resolved_quotes": [
+          "Declutterring Mugler, Minimalist, Lakmé, Maybelline, Bioderma | Makeup, Skincare, Fragrance + freebies | Lightly Used Used ChatGPT to format only. Pick any freebies you like! :) Swatches & freebies in",
+          "Declutterring Perfume, Skincare & Makeup + freebies | Mugler, Bioderma, Maybelline, Minimalist, Lakmé Used ChatGPT to **format only.** Pick any freebies you like! :) Swatches & freebies in images 2 an",
+          "Declutterring Makeup, Fragrance & Skincare | Bioderma, Mugler, Lakmé, Maybelline & Minimalist | Lightly Used / Basically New Used ChatGPT to format only. Pick any freebies you like! :) Swatches & free",
+          "Recent fits, styled by my girlfriend Please ignore my awkward poses lol still learning! Outfit 1- thrifted shirt and short from Ajio Outfit 2- again thrifted shirt and same shorts Outfit 3- Uniqlo shi",
+          "Bought This Lulu & Sky Dress for a Night Event, but I'm Not Sure About the Color. Thoughts? bought this dress because I really like the style and silhouette. The fit is good, and even though it's a li"
+        ],
+        "stalled_quotes": [
+          "Very poor app experience for me. whenever i see an item in my wishlist it just goes to the start of my wishlist no matter where we were. it gets annoying after a while just to even look at all the ite",
+          "Have order a decent amount of stuff from nykaa. Sometimes it's fine sometimes it doesn't look like what it's in the picture at all. Oredered a pair of jeans size 26 and it didn't fit me. Another pair,"
+        ],
+        "unresolved_gap": false
+      },
+      "Social validation": {
+        "axis": "Social validation",
+        "resolved_count": 2,
+        "stalled_count": 1,
+        "resolution_rate": 0.67,
+        "resolved_quotes": [
+          "Impulse bought the ASICS GEL-1130 for ₹2,272. Need some reassurance So this is probably the most impulsive purchase I've ever made. I was just casually scrolling through AJIO when I saw the ASICS GEL-",
+          "Starting my running journey! Help me find a good running shoes for beginners! Budget 2-2.4K Guys, I have come across this shoes (Decathlon Kiprun jogflow 190.1) On decathlon website & Ajio it is curre"
+        ],
+        "stalled_quotes": [
+          "Where should I buy this from? I am confused as to where to purchase from. I read somewhere that nykaa might be sending used bottles and also I have never bought any mist from myntra ever. So where sho"
+        ],
+        "unresolved_gap": false
+      },
+      "Fit": {
+        "axis": "Fit",
+        "resolved_count": 6,
+        "stalled_count": 2,
+        "resolution_rate": 0.75,
+        "resolved_quotes": [
+          "Recent fits, styled by my girlfriend Please ignore my awkward poses lol still learning! Outfit 1- thrifted shirt and short from Ajio Outfit 2- again thrifted shirt and same shorts Outfit 3- Uniqlo shi",
+          "Bought This Lulu & Sky Dress for a Night Event, but I'm Not Sure About the Color. Thoughts? bought this dress because I really like the style and silhouette. The fit is good, and even though it's a li",
+          "office party fit went to an airbnb to celebrate with my team. loved how this dress looked on me. bought it from myntra",
+          "Recent fits, styled by my girlfriend Please ignore my awkward poses lol still learning! Outfit 1- thrifted shirt and short from Ajio Outfit 2- again thrifted shirt and same shorts Outfit 3- Uniqlo shi",
+          "whatever I ordered it's always opposite of that bc colour change aata fitting change aati yr har bar ka he inka"
+        ],
+        "stalled_quotes": [
+          "started buying recently, initially 2 -3 times delivery nd few returns also were good on time, but now recently purchased 3 kurta sets the I requested for return pickup the next day itself after receiv",
+          "Have order a decent amount of stuff from nykaa. Sometimes it's fine sometimes it doesn't look like what it's in the picture at all. Oredered a pair of jeans size 26 and it didn't fit me. Another pair,"
+        ],
+        "unresolved_gap": false
+      },
+      "Decision fatigue": {
+        "axis": "Decision fatigue",
+        "resolved_count": 1,
+        "stalled_count": 0,
+        "resolution_rate": 1.0,
+        "resolved_quotes": [
+          "Bought This Lulu & Sky Dress for a Night Event, but I'm Not Sure About the Color. Thoughts? bought this dress because I really like the style and silhouette. The fit is good, and even though it's a li"
+        ],
+        "stalled_quotes": [],
+        "unresolved_gap": false
+      },
+      "Occasion": {
+        "axis": "Occasion",
+        "resolved_count": 6,
+        "stalled_count": 2,
+        "resolution_rate": 0.75,
+        "resolved_quotes": [
+          "office party fit went to an airbnb to celebrate with my team. loved how this dress looked on me. bought it from myntra",
+          "Disappointment. Dear Myntra , I am writing to raise a formal complaint regarding the delayed delivery of two HRX products that I ordered from Myntra. The promised delivery date was 18 August, but the ",
+          "Never going to place the order from ajio again.. placed the order for buda jeans co brown colour L size semiformal shirt but received buda jeans formal L size pink shirt .. and returned the item menti",
+          "I ordered a dress which was suppose to be delivered on 19th oct. I didn't receive it. I tried connecting with support but chat doesn't let you do that. I called their customer service and they told me",
+          "worst experience so far delivery was delayed and it kept delaying even though it reached my city still haven't received it ordered it for diwali and it was aprepaid order mesho is far better even your"
+        ],
+        "stalled_quotes": [
+          "Order cancelled without informing. My Order was cancelled without sending me a mail or msg for it and also showing order was cancelled on 24 and today is 29 and still didn’t refund my money and i was ",
+          "Their delivery is done through third party shadow fax so its always waiting for your long lost love which may show up or send regret that they could not come with a message . Delivey date in the app w"
+        ],
+        "unresolved_gap": false
+      }
+    },
+    "largest_gaps": [],
+    "headline_quotes": [],
+    "what_this_means": "Axes where users stall in volume but rarely describe resolving the doubt themselves are the ones the platform currently leaves unanswered — the user has no workaround good enough to close the decision."
+  },
+  "recommendation": {
+    "axis": "Returns",
+    "headline": "Returns",
+    "confidence": "high",
+    "signal_score": 129.5,
+    "stall_score": 66.4,
+    "stalled_count": 83,
+    "resolved_count": 21,
+    "resolution_rate": 0.2,
+    "external_refs": 179,
+    "funnel_gate": "Resolve",
+    "convergent_themes": [
+      {
+        "theme_name": "Positive Return and Exchange Experiences",
+        "funnel_gate": "Resolve",
+        "review_count": 52,
+        "per_app": {
+          "Myntra": 38,
+          "AJIO": 3,
+          "Nykaa Fashion": 11
+        }
+      },
+      {
+        "theme_name": "Easy Returns and Quality",
+        "funnel_gate": "Resolve",
+        "review_count": 48,
+        "per_app": {
+          "Myntra": 37,
+          "AJIO": 3,
+          "Nykaa Fashion": 8
+        }
+      },
+      {
+        "theme_name": "Easy Returns and Exchanges",
+        "funnel_gate": "Resolve",
+        "review_count": 20,
+        "per_app": {
+          "Myntra": 19,
+          "AJIO": 0,
+          "Nykaa Fashion": 1
+        }
+      }
+    ],
+    "runner_up": "Quality",
+    "runner_up_score": 10.9,
+    "evidence_counts": {
+      "stalled_records": 83,
+      "resolved_records": 21,
+      "convergent_theme_count": 3,
+      "external_reference_records": 179,
+      "corpus_usable": 13552
+    },
+    "supporting_themes": [
+      {
+        "theme_name": "Positive Return and Exchange Experiences",
+        "funnel_gate": "Resolve",
+        "review_count": 52,
+        "per_app": {
+          "Myntra": 38,
+          "AJIO": 3,
+          "Nykaa Fashion": 11
+        }
+      },
+      {
+        "theme_name": "Easy Returns and Quality",
+        "funnel_gate": "Resolve",
+        "review_count": 48,
+        "per_app": {
+          "Myntra": 37,
+          "AJIO": 3,
+          "Nykaa Fashion": 8
+        }
+      },
+      {
+        "theme_name": "Easy Returns and Exchanges",
+        "funnel_gate": "Resolve",
+        "review_count": 20,
+        "per_app": {
+          "Myntra": 19,
+          "AJIO": 0,
+          "Nykaa Fashion": 1
+        }
+      }
+    ],
+    "quotes": [
+      "Myntra's return policy is complicated when you receive the wrong product. I have been waiting for days and still the issue is not getting resolved. Also their packaging is the worst.",
+      "Poor customer support from Myntra.I had ordered for a t shirt on 08.08.2026 and done the payment.Delivery date was showing 16 -18 Aug.The seller cancelled the order by themselves on 16th August citing",
+      "Very disappointing experience. My issue has been going on for almost a month. I received the wrong product and provided the product tag/code and invoice as evidence, but Myntra kept giving generic res"
+    ],
+    "what_this_means": "Returns is the strongest opportunity area: 83 records describe a decision stalling on it, and only 21 describe resolving it (20% resolution rate). An independently clustered theme corroborates it — “Positive Return and Exchange Experiences” (Resolve, n=52). 179 records describe leaving the platform to resolve it, so the uncertainty is currently answered off-app or not at all. The fix has to land at the Resolve gate. Axis was derived from the data by fixed rules, not pre-selected."
+  },
+  "validation": {
+    "spotcheck_agreement_pct": null,
+    "judged": 0,
+    "agreements": 0,
+    "disagreements": [],
+    "pending": 28,
+    "quotes_validated": 93,
+    "quotes_rejected": 0,
+    "negative_test": {
+      "fabricated_quote": "I wishlisted a kurta and the app teleported it into my wardrobe before I finished tapping checkout.",
+      "rejected": true
+    }
+  },
+  "naming_stats": {
+    "track_a": {
+      "quotes_validated": 57,
+      "quotes_rejected": 0,
+      "themes_omitted": 0
+    },
+    "track_b": {
+      "quotes_validated": 36,
+      "quotes_rejected": 0,
+      "themes_omitted": 0
+    }
+  },
+  "triangulation": [],
+  "brief_questions": {
+    "version": "2026-08-21.1",
+    "questions": [
+      {
+        "id": "Q1",
+        "question": "Why do users add fashion products to their wishlist?",
+        "status": "Suggestive - under-powered",
+        "answerable": true,
+        "answer": "The corpus surfaces exactly one save-motivation with direct evidence: PRICE WATCHING. Theme full:38 records users who wishlist an item specifically to track its price, then report the price RISING after they save it. flagged:23 shows discounts/coupons as the event users wait for. No other save motivation (inspiration, comparison shortlist, bookmarking) appears at measurable volume.",
+        "evidence": [
+          {
+            "theme_id": "full:38",
+            "theme_name": "Inconsistent Product Pricing",
+            "review_count": 26,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Return",
+            "per_app": {
+              "Myntra": 6,
+              "AJIO": 14,
+              "Nykaa Fashion": 6
+            },
+            "quotes": [
+              {
+                "text": "first they say offer price is 1400 rs then when you click on product all of sudden it goes to 2100 bad experience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "every time price will change while placing orders",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "if i put anything on wishlist today the next day price of the product will increase",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "flagged:23",
+            "theme_name": "Discounts and Coupon Offers",
+            "review_count": 76,
+            "pct_of_corpus": 0.6,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 31,
+              "AJIO": 23,
+              "Nykaa Fashion": 22
+            },
+            "quotes": [
+              {
+                "text": "very good app, with good quality products and good discount",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "I've never received this much discount on an online purchase before.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Frequent sales and great coupon discounts make it highly affordable.",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [
+          {
+            "theme_id": "full:18",
+            "theme_name": "High Product Pricing",
+            "review_count": 106,
+            "pct_of_corpus": 0.8,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 15,
+              "AJIO": 23,
+              "Nykaa Fashion": 68
+            },
+            "quotes": [
+              {
+                "text": "bad Quality products items and too much expensive as comparison to other apps",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Very very very very very very very costly",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "no offers and the price seems to be not worth",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 102,
+        "evidence_pct": 0.8,
+        "theme_count": 2,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Under-powered. Only 283 community records (2.1% of corpus); the other 97.9% are store reviews, which do not carry save-motivation narratives. Treat price-watch as the one evidenced motive, not as the dominant one.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q2",
+        "question": "What prevents wishlisted products from eventually being purchased?",
+        "status": "Suggestive - under-powered",
+        "answerable": true,
+        "answer": "Three evidenced blockers, all at the price/checkout end rather than the product-doubt end: (1) price increases after saving (full:38); (2) price judged too high vs alternatives (full:18); (3) fees added at checkout — COD, platform and delivery charges (full:25). The engine's own opportunity scoring instead ranks RETURNS uncertainty highest (83 stalled vs 21 resolved, 20% resolution rate), driven by records where return/exchange risk is what keeps the decision open.",
+        "evidence": [
+          {
+            "theme_id": "full:38",
+            "theme_name": "Inconsistent Product Pricing",
+            "review_count": 26,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Return",
+            "per_app": {
+              "Myntra": 6,
+              "AJIO": 14,
+              "Nykaa Fashion": 6
+            },
+            "quotes": [
+              {
+                "text": "first they say offer price is 1400 rs then when you click on product all of sudden it goes to 2100 bad experience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "every time price will change while placing orders",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "if i put anything on wishlist today the next day price of the product will increase",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:18",
+            "theme_name": "High Product Pricing",
+            "review_count": 106,
+            "pct_of_corpus": 0.8,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 15,
+              "AJIO": 23,
+              "Nykaa Fashion": 68
+            },
+            "quotes": [
+              {
+                "text": "bad Quality products items and too much expensive as comparison to other apps",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Very very very very very very very costly",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "no offers and the price seems to be not worth",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:25",
+            "theme_name": "Delivery and Platform Charges",
+            "review_count": 197,
+            "pct_of_corpus": 1.5,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 39,
+              "AJIO": 104,
+              "Nykaa Fashion": 54
+            },
+            "quotes": [
+              {
+                "text": "very bad this app charges extra money like platform charge Cash on delivery charge 29₹",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "रोज स्पिन करने पर पैसे मिलते है डिलवरी चार्ज जीरो हो जाता है",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "thank you thank you thank you thank you thank you thank you thank you thank cash on delivery dene ke liye kaun si train ki train ki train kitne baje",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [
+          {
+            "theme_id": "full:64",
+            "theme_name": "Easy Returns and Quality",
+            "review_count": 48,
+            "pct_of_corpus": 0.4,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 37,
+              "AJIO": 3,
+              "Nykaa Fashion": 8
+            },
+            "quotes": [
+              {
+                "text": "good quality and easy to return policy also",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Really good deals, and extremely fast returns.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:65",
+            "theme_name": "Easy Returns and Exchanges",
+            "review_count": 20,
+            "pct_of_corpus": 0.1,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 19,
+              "AJIO": 0,
+              "Nykaa Fashion": 1
+            },
+            "quotes": [
+              {
+                "text": "good app with easy returns and exchanges facilities..",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Refund processes instantly. Size and style exchange options offer convenience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "return an exchange policy amazing",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 329,
+        "evidence_pct": 2.4,
+        "theme_count": 3,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "The blockers named here are visible in store reviews; wishlist-specific abandonment reasoning is thin. Not yet corroborated by primary research.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q3",
+        "question": "What uncertainties remain after users have identified a product they like?",
+        "status": "Suggestive - under-powered",
+        "answerable": true,
+        "answer": "Ranked by unresolved stall volume: Returns/exchange risk (83 stalled, 20% resolved) far ahead of Quality (10, 44%), Colour accuracy (5, 58%), Size (4, 73%) and Fit (2, 75%). The pattern is that fit and size doubts largely DO get resolved once users engage, while return-policy risk stays open — users are unsure what happens if the item is wrong, and that keeps the decision suspended.",
+        "evidence": [
+          {
+            "theme_id": "full:64",
+            "theme_name": "Easy Returns and Quality",
+            "review_count": 48,
+            "pct_of_corpus": 0.4,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 37,
+              "AJIO": 3,
+              "Nykaa Fashion": 8
+            },
+            "quotes": [
+              {
+                "text": "good quality and easy to return policy also",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Really good deals, and extremely fast returns.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:65",
+            "theme_name": "Easy Returns and Exchanges",
+            "review_count": 20,
+            "pct_of_corpus": 0.1,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 19,
+              "AJIO": 0,
+              "Nykaa Fashion": 1
+            },
+            "quotes": [
+              {
+                "text": "good app with easy returns and exchanges facilities..",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Refund processes instantly. Size and style exchange options offer convenience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "return an exchange policy amazing",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:60",
+            "theme_name": "Product Quality and Design Praise",
+            "review_count": 311,
+            "pct_of_corpus": 2.3,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 203,
+              "AJIO": 72,
+              "Nykaa Fashion": 36
+            },
+            "quotes": [
+              {
+                "text": "nice product and quality of products is very good",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Easy breezy and comfortable and soft fabric",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "A very beautiful dress, perfect stich",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:48",
+            "theme_name": "Product matches images",
+            "review_count": 20,
+            "pct_of_corpus": 0.1,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 13,
+              "AJIO": 3,
+              "Nykaa Fashion": 4
+            },
+            "quotes": [
+              {
+                "text": "the quality of the product is as good as shown in the image",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "It’s just as shown in pics",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "exect colour design and everything is the same as the picture which I shown",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [
+          {
+            "theme_id": "full:56",
+            "theme_name": "Positive Product Quality and Value",
+            "review_count": 27,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 27,
+              "AJIO": 0,
+              "Nykaa Fashion": 0
+            },
+            "quotes": [
+              {
+                "text": "The product quality is good, the material feels comfortable, and it looks exactly like the pictures.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "The quality of the slippers is outstanding. They feel premium, durable, sturdy, and very well made.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Excellent quality, premium look, comfortable to wear, and worth the price.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "flagged:29",
+            "theme_name": "Positive Return and Exchange Experiences",
+            "review_count": 52,
+            "pct_of_corpus": 0.4,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 38,
+              "AJIO": 3,
+              "Nykaa Fashion": 11
+            },
+            "quotes": [
+              {
+                "text": "Simply help me with returns with any unnecessary questions n hurdles",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Nicley handled the order returns.",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 399,
+        "evidence_pct": 2.9,
+        "theme_count": 4,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Counts are small in absolute terms (single- to low-double-digits per axis outside Returns). Directional only.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q4",
+        "question": "What causes users to postpone a purchase?",
+        "status": "Suggestive - under-powered",
+        "answerable": true,
+        "answer": "Waiting for a sale or discount is the clearest postponement trigger (flagged:23, full:18). full:38 shows the perverse counterpart: users who postpone to watch a price then find it has risen, which converts postponement into abandonment rather than a later purchase.",
+        "evidence": [
+          {
+            "theme_id": "flagged:23",
+            "theme_name": "Discounts and Coupon Offers",
+            "review_count": 76,
+            "pct_of_corpus": 0.6,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 31,
+              "AJIO": 23,
+              "Nykaa Fashion": 22
+            },
+            "quotes": [
+              {
+                "text": "very good app, with good quality products and good discount",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "I've never received this much discount on an online purchase before.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Frequent sales and great coupon discounts make it highly affordable.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:18",
+            "theme_name": "High Product Pricing",
+            "review_count": 106,
+            "pct_of_corpus": 0.8,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 15,
+              "AJIO": 23,
+              "Nykaa Fashion": 68
+            },
+            "quotes": [
+              {
+                "text": "bad Quality products items and too much expensive as comparison to other apps",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Very very very very very very very costly",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "no offers and the price seems to be not worth",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:38",
+            "theme_name": "Inconsistent Product Pricing",
+            "review_count": 26,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Return",
+            "per_app": {
+              "Myntra": 6,
+              "AJIO": 14,
+              "Nykaa Fashion": 6
+            },
+            "quotes": [
+              {
+                "text": "first they say offer price is 1400 rs then when you click on product all of sudden it goes to 2100 bad experience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "every time price will change while placing orders",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "if i put anything on wishlist today the next day price of the product will increase",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [],
+        "evidence_n": 208,
+        "evidence_pct": 1.5,
+        "theme_count": 3,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Under-powered on community text, which is where postponement narratives live.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q5",
+        "question": "How do users compare multiple shortlisted products?",
+        "status": "Not answerable from review data",
+        "answerable": false,
+        "answer": "No theme in this corpus describes side-by-side comparison of shortlisted items. Store reviews concern a single transaction and structurally cannot show comparison behaviour, and the 283 community records did not yield a comparison cluster. This question needs the primary research interviews or a substantially larger Reddit corpus.",
+        "evidence": [],
+        "context": [
+          {
+            "theme_id": "full:13",
+            "theme_name": "Fashion product inquiries",
+            "review_count": 84,
+            "pct_of_corpus": 0.6,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 57,
+              "AJIO": 26,
+              "Nykaa Fashion": 1
+            },
+            "quotes": [
+              {
+                "text": "Looking for affordable pure cotton kurta set brands",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "help regarding outfit for college fest",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "What gift should i get myself?",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 0,
+        "evidence_pct": 0.0,
+        "theme_count": 0,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Honest null. Absence of evidence here reflects the corpus, not the behaviour.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q6",
+        "question": "What information do users seek outside the app before purchasing?",
+        "status": "Suggestive - under-powered",
+        "answerable": true,
+        "answer": "179 records reference an external source while touching an uncertainty axis — the single strongest externalisation signal in the run, and the reason Returns scores as the top opportunity. Community themes full:13 (users asking others for budget/quality/sizing recommendations) and full:12 (outfit/fit-check posts sourcing and socially validating items) show the behaviour directly: users leave the product surface and ask people.",
+        "evidence": [
+          {
+            "theme_id": "full:13",
+            "theme_name": "Fashion product inquiries",
+            "review_count": 84,
+            "pct_of_corpus": 0.6,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 57,
+              "AJIO": 26,
+              "Nykaa Fashion": 1
+            },
+            "quotes": [
+              {
+                "text": "Looking for affordable pure cotton kurta set brands",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "help regarding outfit for college fest",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "What gift should i get myself?",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:12",
+            "theme_name": "Outfit details and styling",
+            "review_count": 78,
+            "pct_of_corpus": 0.6,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 65,
+              "AJIO": 13,
+              "Nykaa Fashion": 0
+            },
+            "quotes": [
+              {
+                "text": "fits i wore recently outfit details: 1) top and jeans from myntra, heels from a local store, earrings from shein",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Styling tips for road trip girl core I am a big fan of comfy + minimalist clothing.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Today’s gym fit, powered by endorphins! Top: Ajio Leggings: Myntra",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [
+          {
+            "theme_id": "flagged:6",
+            "theme_name": "Outfit and purchase details",
+            "review_count": 75,
+            "pct_of_corpus": 0.6,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 62,
+              "AJIO": 13,
+              "Nykaa Fashion": 0
+            },
+            "quotes": [
+              {
+                "text": "top and jeans from myntra, heels from a local store",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Got it for 1k in Dec 2022 in a Myntra sale.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Top: Ajio Leggings: Myntra",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 162,
+        "evidence_pct": 1.2,
+        "theme_count": 2,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "The 179 count spans the whole corpus; per-axis attribution is approximate.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q7",
+        "question": "What role do fit, size, styling, price, reviews, occasion and social validation play?",
+        "status": "Partial",
+        "answerable": true,
+        "answer": "Measured as stalled-vs-resolved per axis: Returns 83/21 (20% resolved) dominates. Price 13/18 (58%) and Styling 2/12 (86%) resolve readily. Size 4/11 (73%) and Fit 2/6 (75%) resolve more often than they stall — notable, because fit is the assumed fashion blocker and this corpus does not support that assumption. Social validation is barely present (1/2). Occasion 2/6.",
+        "evidence": [
+          {
+            "theme_id": "full:60",
+            "theme_name": "Product Quality and Design Praise",
+            "review_count": 311,
+            "pct_of_corpus": 2.3,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 203,
+              "AJIO": 72,
+              "Nykaa Fashion": 36
+            },
+            "quotes": [
+              {
+                "text": "nice product and quality of products is very good",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Easy breezy and comfortable and soft fabric",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "A very beautiful dress, perfect stich",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:64",
+            "theme_name": "Easy Returns and Quality",
+            "review_count": 48,
+            "pct_of_corpus": 0.4,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 37,
+              "AJIO": 3,
+              "Nykaa Fashion": 8
+            },
+            "quotes": [
+              {
+                "text": "good quality and easy to return policy also",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Really good deals, and extremely fast returns.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:48",
+            "theme_name": "Product matches images",
+            "review_count": 20,
+            "pct_of_corpus": 0.1,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 13,
+              "AJIO": 3,
+              "Nykaa Fashion": 4
+            },
+            "quotes": [
+              {
+                "text": "the quality of the product is as good as shown in the image",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "It’s just as shown in pics",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "exect colour design and everything is the same as the picture which I shown",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:18",
+            "theme_name": "High Product Pricing",
+            "review_count": 106,
+            "pct_of_corpus": 0.8,
+            "funnel_gate": "Convert",
+            "per_app": {
+              "Myntra": 15,
+              "AJIO": 23,
+              "Nykaa Fashion": 68
+            },
+            "quotes": [
+              {
+                "text": "bad Quality products items and too much expensive as comparison to other apps",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Very very very very very very very costly",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "no offers and the price seems to be not worth",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [
+          {
+            "theme_id": "full:56",
+            "theme_name": "Positive Product Quality and Value",
+            "review_count": 27,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 27,
+              "AJIO": 0,
+              "Nykaa Fashion": 0
+            },
+            "quotes": [
+              {
+                "text": "The product quality is good, the material feels comfortable, and it looks exactly like the pictures.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "The quality of the slippers is outstanding. They feel premium, durable, sturdy, and very well made.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Excellent quality, premium look, comfortable to wear, and worth the price.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "flagged:26",
+            "theme_name": "Positive App and Clothing Quality",
+            "review_count": 62,
+            "pct_of_corpus": 0.5,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 40,
+              "AJIO": 14,
+              "Nykaa Fashion": 8
+            },
+            "quotes": [
+              {
+                "text": "Really good shopping app and quality of clothes is also good",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "very good, trusted and authentic application for styling",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "fabric is good but brand is too expensive. fond of fabrics displayed in this app.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "flagged:46",
+            "theme_name": "Product Quality and Value",
+            "review_count": 63,
+            "pct_of_corpus": 0.5,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 62,
+              "AJIO": 1,
+              "Nykaa Fashion": 0
+            },
+            "quotes": [
+              {
+                "text": "i receiving good quality products on shopping on myntra platform",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "the quality of it so good I have been using it for over a year it is still in goog condition",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "for original and best quality product, go to Myntra...",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 485,
+        "evidence_pct": 3.6,
+        "theme_count": 4,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Absolute counts outside Returns are small. The fit finding contradicts the common prior and should be tested in interviews before being relied on.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q8",
+        "question": "When do users use the wishlist as genuine purchase intent versus simply as a bookmarking mechanism?",
+        "status": "Not answerable from review data",
+        "answerable": false,
+        "answer": "The corpus cannot separate these. full:38 evidences one specific use — the wishlist as a price-watch instrument — which is intent-adjacent but conditional. Nothing distinguishes a genuine-intent save from a bookmarking save, because neither store reviews nor the available community records narrate the save decision itself.",
+        "evidence": [],
+        "context": [
+          {
+            "theme_id": "full:38",
+            "theme_name": "Inconsistent Product Pricing",
+            "review_count": 26,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Return",
+            "per_app": {
+              "Myntra": 6,
+              "AJIO": 14,
+              "Nykaa Fashion": 6
+            },
+            "quotes": [
+              {
+                "text": "first they say offer price is 1400 rs then when you click on product all of sudden it goes to 2100 bad experience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "every time price will change while placing orders",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "if i put anything on wishlist today the next day price of the product will increase",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 0,
+        "evidence_pct": 0.0,
+        "theme_count": 0,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "This is the question the brief most directly poses and the corpus most clearly cannot answer. It should drive the interview guide.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q9",
+        "question": "How do these behaviours differ across user segments?",
+        "status": "Not answerable from review data",
+        "answerable": false,
+        "answer": "No segmentation is possible from this data. The corpus carries no demographic, tenure or basket-value attributes, and the only available split — by app — is a platform split, not a user segment. Per-app theme skew exists (Nykaa Fashion dominates full:1, AJIO full:7) but reflects each app's service performance, not user type.",
+        "evidence": [],
+        "context": [],
+        "evidence_n": 0,
+        "evidence_pct": 0.0,
+        "theme_count": 0,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Requires primary research. Segment choice for Part 3 cannot be evidenced from this engine alone.",
+        "defers_to": ""
+      },
+      {
+        "id": "Q10",
+        "question": "What unmet needs emerge consistently across user conversations?",
+        "status": "Suggestive - under-powered",
+        "answerable": true,
+        "answer": "One need recurs with the strongest evidence in the run: certainty about return/exchange terms BEFORE committing (83 stalled, 20% resolved, and the largest externalisation signal). A second, narrower but sharply evidenced need is price stability on saved items — users experience wishlisting as something that works against them (full:38).",
+        "evidence": [
+          {
+            "theme_id": "full:38",
+            "theme_name": "Inconsistent Product Pricing",
+            "review_count": 26,
+            "pct_of_corpus": 0.2,
+            "funnel_gate": "Return",
+            "per_app": {
+              "Myntra": 6,
+              "AJIO": 14,
+              "Nykaa Fashion": 6
+            },
+            "quotes": [
+              {
+                "text": "first they say offer price is 1400 rs then when you click on product all of sudden it goes to 2100 bad experience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "every time price will change while placing orders",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "if i put anything on wishlist today the next day price of the product will increase",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:64",
+            "theme_name": "Easy Returns and Quality",
+            "review_count": 48,
+            "pct_of_corpus": 0.4,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 37,
+              "AJIO": 3,
+              "Nykaa Fashion": 8
+            },
+            "quotes": [
+              {
+                "text": "good quality and easy to return policy also",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Really good deals, and extremely fast returns.",
+                "validation_status": "Validated"
+              }
+            ]
+          },
+          {
+            "theme_id": "full:65",
+            "theme_name": "Easy Returns and Exchanges",
+            "review_count": 20,
+            "pct_of_corpus": 0.1,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 19,
+              "AJIO": 0,
+              "Nykaa Fashion": 1
+            },
+            "quotes": [
+              {
+                "text": "good app with easy returns and exchanges facilities..",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Refund processes instantly. Size and style exchange options offer convenience",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "return an exchange policy amazing",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "context": [
+          {
+            "theme_id": "flagged:29",
+            "theme_name": "Positive Return and Exchange Experiences",
+            "review_count": 52,
+            "pct_of_corpus": 0.4,
+            "funnel_gate": "Resolve",
+            "per_app": {
+              "Myntra": 38,
+              "AJIO": 3,
+              "Nykaa Fashion": 11
+            },
+            "quotes": [
+              {
+                "text": "Simply help me with returns with any unnecessary questions n hurdles",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Exchange is easy and convenient.Thank you for being customer friendly.",
+                "validation_status": "Validated"
+              },
+              {
+                "text": "Nicley handled the order returns.",
+                "validation_status": "Validated"
+              }
+            ]
+          }
+        ],
+        "evidence_n": 94,
+        "evidence_pct": 0.7,
+        "theme_count": 3,
+        "corpus_quotes": [],
+        "cross_refs": [],
+        "caveat": "Derived from a store-dominated corpus. The return-certainty need is well-evidenced; its ranking relative to fit/size needs community volume this run does not have.",
+        "defers_to": ""
+      }
+    ],
+    "summary": {
+      "total": 10,
+      "answerable": 7,
+      "not_answerable": 3
+    },
+    "source_disclosure": {
+      "corpus": "13,552 usable records: 12,237 Play, 1,032 App Store, 283 Reddit.",
+      "weighting": "Community/discussion text is the intended quantified base but is only 2.1% of this corpus. Headline percentages against the primary denominator are therefore under-powered and are reported as such.",
+      "sources_dropped": "YouTube dropped at the sample gate (0.1% hit-rate, n=1,660). X/Twitter never sampled.",
+      "primary_research": "Not yet conducted. triangulation.json is intentionally absent."
+    },
+    "gate_distribution": {
+      "note": "Themes concentrate at Resolve (12) and Other-unrelated (14). The large Other-unrelated share is the store corpus asserting itself: post-purchase delivery and refund failures are not wishlist-funnel events.",
+      "per_gate_theme_count": {
+        "Save": 0,
+        "Return": 1,
+        "Resolve": 12,
+        "Convert": 4,
+        "Other - unrelated": 14
+      },
+      "per_gate_review_count": {
+        "Save": 0,
+        "Return": 26,
+        "Resolve": 961,
+        "Convert": 430,
+        "Other - unrelated": 15419
+      },
+      "total_theme_count": 31,
+      "dominant_gate": "Other - unrelated"
+    }
+  },
+  "corroboration": {
+    "note": "Community and discussion text (Reddit, YouTube comments, forums) is the primary corpus for this engine — it is where users narrate their own purchase deliberation. App and Play Store reviews are retained as a secondary corroboration corpus: they are written at moments of transactional friction and structurally under-represent the reasoning behind an unpurchased saved item.",
+    "verdict": "9 of 31 themes (29%) appear in BOTH the community corpus and the store-review corpus. Cross-source themes are the most defensible findings in this run; single-source themes are reported with that limitation stated.",
+    "quotes": [],
+    "cross_source_themes": [
+      {
+        "theme_name": "Pricing and Delivery Issues",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 52,
+        "secondary_n": 4771,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "Delivery delays and product quality issues",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 3,
+        "secondary_n": 4790,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "Delivery, Return, and Support Failures",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 1,
+        "secondary_n": 1249,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "Delivery Delays and Return Issues",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 1,
+        "secondary_n": 1143,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "Delivery Failures and Wallet Issues",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 10,
+        "secondary_n": 996,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "General Positive Shopping Experiences",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 7,
+        "secondary_n": 882,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "Order Errors and Refund Failures",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 26,
+        "secondary_n": 495,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "General Positive Shopping Experiences",
+        "funnel_gate": "Other - unrelated",
+        "primary_n": 1,
+        "secondary_n": 106,
+        "corroboration": "cross-source"
+      },
+      {
+        "theme_name": "Fashion product inquiries",
+        "funnel_gate": "Resolve",
+        "primary_n": 81,
+        "secondary_n": 3,
+        "corroboration": "cross-source"
+      }
+    ],
+    "counts": {
+      "total_records": 13552,
+      "primary_records": 283,
+      "secondary_records": 13269,
+      "by_source": {
+        "forum": 283,
+        "play": 12237,
+        "appstore": 1032
+      },
+      "unique_threads": 235
+    }
+  },
+  "corpus_weighting": {
+    "total": 13552,
+    "primary_n": 283,
+    "secondary_n": 13269,
+    "primary_pct": 2.1,
+    "secondary_pct": 97.9,
+    "per_source": {
+      "forum": 283,
+      "play": 12237,
+      "appstore": 1032
+    },
+    "base_for_headline_stats": "primary (community/discussion)"
+  },
+  "taxonomy_ref": "data/taxonomy/centroids-2026-08-21"
+}

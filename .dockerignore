@@ -1,0 +1,27 @@
+.git
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.DS_Store
+
+# Secrets
+.env
+Indigo Tracker.json
+*-service-account*.json
+*credentials*.json
+
+# Bulk regenerable data — NOT needed at runtime (embeddings 148M + cache 24M)
+data/cache
+data/embeddings
+data/analysis
+data/interpret
+
+# Docs — keeps problemStatement.md (cohort + blind-eval description) out of image
+docs/
+
+# Root-level markdown (except README, but we don't need it in the image either)
+*.md
+
+# Spot-check artifacts
+spotcheck-second-pass.json

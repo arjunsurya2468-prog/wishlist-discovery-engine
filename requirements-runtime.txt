@@ -1,0 +1,9 @@
+# Runtime dependencies only — installed in the Docker image.
+# Keeps the training stack (umap/hdbscan/sklearn/numba) out of the 512 MB free-tier.
+fastapi>=0.110
+uvicorn>=0.29
+numpy>=2.0
+requests>=2.32
+urllib3>=2
+python-dotenv>=1.0
+google-play-scraper>=1.2.7

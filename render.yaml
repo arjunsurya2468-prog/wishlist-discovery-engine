@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: wishlist-discovery-engine
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      # Embeddings on the live-run path (OpenAI-compatible via OpenRouter).
+      - key: OPENROUTER_API_KEY
+        sync: false
+      # Naming/LLM. Only needed if a phase that calls the LLM runs on the host;
+      # the live run itself does not name clusters.
+      - key: GROQ_API_KEY
+        sync: false
+      # NOTE: the taxonomy fingerprint gate (pipeline/cluster/fingerprint.py) refuses
+      # to boot unless data/taxonomy/ was built from THIS corpus. Do not set
+      # ALLOW_UNVERIFIED_TAXONOMY here — it exists for local dev only, and bypassing
+      # it means the deployed engine serves cluster assignments that may be meaningless.

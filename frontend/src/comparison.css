@@ -1,0 +1,311 @@
+/* Comparison Page CSS */
+.comparison-page {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header context */
+.comparison-header-context {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  color: var(--text-gray);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-list {
+  padding: 0;
+}
+
+/* Row Layout */
+.comparison-row {
+  position: relative;
+  padding: 24px 20px;
+  border-bottom: 8px solid #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+.comparison-row:last-child {
+  border-bottom: none;
+}
+
+.comparison-row-dismiss {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  padding: 8px;
+  z-index: 2;
+}
+
+/* Split Cards */
+.comparison-cards-wrapper {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.vs-badge {
+  position: absolute;
+  left: 50%;
+  top: 35%; /* align generally with image centers */
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid var(--border-color);
+  color: var(--text-gray);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 2;
+}
+
+.compare-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* allows text truncation */
+}
+
+/* Qualifier Tag */
+.qualifier-tag {
+  background-color: #e5f6e8;
+  color: #03a685;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.qualifier-placeholder {
+  height: 23px; /* Match height of qualifier tag to keep cards aligned */
+  margin-bottom: 8px;
+}
+
+/* Image */
+.compare-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Info */
+.compare-brand {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.compare-name {
+  font-size: 13px;
+  color: var(--text-gray);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+/* Evidence Block - Crucial */
+.evidence-block {
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  flex-grow: 1; /* Pushes price down, keeps them aligned if heights differ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.evidence-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.evidence-bold {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: block;
+  margin-top: 4px;
+}
+.evidence-bold.warning {
+  color: #dd6b20; /* Orange */
+}
+.evidence-bold.good {
+  color: #03a685;
+}
+
+/* Scale Bar */
+.evidence-scale-bar-track {
+  width: 100%;
+  height: 4px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.evidence-scale-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.evidence-scale-bar-fill.warning {
+  background-color: #dd6b20;
+}
+.evidence-scale-bar-fill.good {
+  background-color: #03a685;
+}
+
+/* Price */
+.compare-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.compare-current {
+  font-size: 15px;
+  font-weight: 800;
+}
+.compare-mrp {
+  font-size: 12px;
+  color: var(--text-gray);
+  text-decoration: line-through;
+}
+
+.price-diff-line {
+  font-size: 12px;
+  color: var(--text-gray);
+  margin-top: 2px;
+}
+
+/* Action Rows */
+.compare-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.compare-actions-split {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.action-col-left, .action-col-right {
+  flex: 1;
+}
+
+.keep-this-link {
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.compare-primary-btn {
+  background-color: var(--primary-red);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+}
+
+.compare-secondary-row {
+  display: flex;
+  gap: 8px;
+}
+
+.compare-secondary-btn {
+  flex: 1;
+  background-color: white;
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compare-secondary-btn.undo-state {
+  background-color: #f5f5f6;
+  border-color: #d4d5d9;
+}
+
+.compare-icon-btn {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+/* Empty State */
+.comparison-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-gray);
+}
+.comparison-empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+.comparison-empty p {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+.comparison-empty button {
+  padding: 12px 24px;
+  border: 1.5px solid var(--primary-red);
+  background: white;
+  color: var(--primary-red);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+}

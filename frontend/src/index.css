@@ -1,0 +1,466 @@
+:root {
+  --primary-red: #ff3f6c;
+  --text-dark: #282c3f;
+  --text-gray: #7e818c;
+  --border-color: #eaeaec;
+  --bg-color: #ffffff;
+  --bg-lavender: #f4f0fa;
+  --bg-page: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.mobile-app-container {
+  width: 740px;
+  height: 1600px;
+  background-color: var(--bg-color);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-title-group {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.header-subtitle {
+  font-size: 16px;
+  color: var(--text-gray);
+  margin-top: 4px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon-container {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--primary-red);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Location Bar */
+.location-bar-wrapper {
+  padding: 16px 20px;
+  background: white;
+}
+
+.location-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-lavender);
+  padding: 16px 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.location-icon {
+  color: var(--primary-red);
+  margin-right: 12px;
+}
+
+.location-text {
+  flex: 1;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-dark);
+}
+
+.location-bold {
+  font-weight: 700;
+}
+
+.location-regular {
+  font-weight: 400;
+  color: var(--text-gray);
+}
+
+.chevron-icon {
+  color: var(--text-gray);
+  margin-left: 12px;
+}
+
+/* Action Pills */
+.action-pills-container {
+  display: flex;
+  gap: 16px;
+  padding: 8px 20px 24px;
+  background: white;
+}
+
+.action-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  background: white;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* Category Chips */
+.category-chips-container {
+  display: flex;
+  gap: 32px;
+  padding: 8px 20px 24px;
+  background: white;
+  overflow-x: auto;
+}
+
+.category-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.chip-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.chip-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #d8d8d8;
+}
+
+.chip-label {
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+/* Promo Banner */
+.promo-banner-wrapper {
+  padding: 0 20px 32px;
+  background: white;
+}
+
+.promo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #ffe0d8 0%, #ffcbe1 100%);
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.promo-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.promo-illustration {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 63, 108, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red);
+}
+
+.promo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.promo-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a202c;
+}
+
+.promo-subtitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-red);
+}
+
+.promo-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-switch {
+  width: 56px;
+  height: 32px;
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+  border: 1.5px solid var(--border-color);
+}
+
+.toggle-knob {
+  width: 24px;
+  height: 24px;
+  background-color: #a0aec0;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+}
+
+.toggle-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-red);
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  background: white;
+  border-top: 1px solid var(--border-color);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-color);
+}
+.product-card:nth-child(odd) {
+  border-right: 1px solid var(--border-color);
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.product-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #e2e8f0;
+}
+
+.add-button {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1.5px solid var(--primary-red);
+  color: var(--primary-red);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.product-info {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+.product-desc {
+  font-size: 16px;
+  color: var(--text-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.price-current {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+.price-discount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #03a685; /* green */
+}
+
+.price-original {
+  font-size: 14px;
+  color: var(--text-gray);
+  text-decoration: line-through;
+}
+
+/* Action Bar */
+.action-bar {
+  display: flex;
+  border-top: 1px solid var(--border-color);
+  background-color: #fafafa;
+}
+
+.action-bar-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+.action-bar-btn:last-child {
+  border-right: none;
+}
+
+/* Quote Block */
+.quote-block {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+}
+
+.quote-icon {
+  color: var(--text-gray);
+  margin-bottom: 24px;
+}
+
+.quote-text {
+  font-size: 20px;
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: var(--text-gray);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.quote-author {
+  font-size: 16px;
+  font-style: italic;
+  color: #a0aec0;
+}
+
+/* Utils */
+.app-controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+.app-controls button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Compare Pill Accent */
+.compare-pill-accent {
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+  background-color: #fff0f3;
+}

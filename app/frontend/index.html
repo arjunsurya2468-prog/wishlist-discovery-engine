@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wishlist Discovery Engine</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header id="header">
+  <div class="wrap">
+    <div class="title-row">
+      <div>
+        <h1>Wishlist Discovery Engine</h1>
+        <p class="sub" id="header-subtitle">loading…</p>
+      </div>
+      <div class="run-badge">
+        <span class="run-label">RUN</span>
+        <span id="run-id">—</span>
+      </div>
+    </div>
+    <div id="stats-row" class="stats-row"></div>
+  </div>
+</header>
+
+<!-- The corpus limitation is the single most important caveat on every number
+     below it. It sits above the tabs, unmissable, rather than in a footnote. -->
+<div id="corpus-banner" class="banner"></div>
+
+<nav id="tabs" class="wrap tabs">
+  <button data-panel="opportunity" class="active">Opportunity</button>
+  <button data-panel="axes">Uncertainty Axes</button>
+  <button data-panel="themes">Themes</button>
+  <button data-panel="brief">Brief Questions</button>
+  <button data-panel="clusters">Clusters</button>
+  <button data-panel="validation">Validation</button>
+  <button data-panel="liverun">Live Run</button>
+</nav>
+
+<main class="wrap">
+  <section id="panel-opportunity" class="panel active"></section>
+  <section id="panel-axes" class="panel"></section>
+
+  <section id="panel-themes" class="panel">
+    <div class="controls">
+      <input id="theme-search" type="search" placeholder="Search themes, summaries, quotes…">
+      <select id="gate-filter"><option value="">All gates</option></select>
+      <span id="theme-count" class="muted"></span>
+    </div>
+    <div id="themes-list"></div>
+  </section>
+
+  <section id="panel-brief" class="panel">
+    <div id="brief-summary" class="brief-summary"></div>
+    <div id="brief-questions-list"></div>
+  </section>
+
+  <section id="panel-clusters" class="panel">
+    <p class="muted" id="clusters-brief"></p>
+    <div id="clusters-table-wrap" class="table-wrap"></div>
+  </section>
+
+  <section id="panel-validation" class="panel">
+    <div id="validation-grid" class="cards"></div>
+    <div id="corroboration-block"></div>
+  </section>
+
+  <section id="panel-liverun" class="panel">
+    <div class="live-intro">
+      <h2>Bounded live run</h2>
+      <p class="muted">Fetches the latest reviews for one app, runs them through the same
+      normalisation and embedding code as the offline pipeline, and assigns each to the
+      nearest cluster in the <strong>locked taxonomy</strong>. It never re-clusters —
+      the taxonomy is fixed, so the delta is comparable to the published run.</p>
+    </div>
+    <div class="live-controls">
+      <select id="live-run-app"></select>
+      <button id="live-run-btn" class="primary">Run</button>
+      <span id="live-run-status" class="muted"></span>
+    </div>
+    <div id="live-run-result"></div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="wrap">
+    <span id="footer-models"></span>
+    <span id="footer-run"></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

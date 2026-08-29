@@ -1,0 +1,17 @@
+# Full local environment — pipeline regen + offline clustering + publish + tests.
+# Strict superset of requirements-runtime.txt.
+# Reproduce: python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements-pipeline.txt
+
+-r requirements-runtime.txt
+
+# --- Phase 1: forums (optional; only used when FIRECRAWL_API_KEY is set) ---
+firecrawl-py>=1.0
+
+# --- Phase 2: embedding + clustering (offline only — NOT in the Docker image) ---
+umap-learn>=0.5.6
+hdbscan>=0.8.40
+scikit-learn>=1.6
+joblib>=1.3
+
+# --- dev / test ---
+pytest>=8.0
