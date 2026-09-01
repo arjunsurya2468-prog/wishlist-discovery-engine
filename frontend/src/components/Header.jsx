@@ -1,10 +1,10 @@
 import React from 'react';
 import { ArrowLeft, Edit3, ShoppingBag } from 'lucide-react';
 
-export default function Header({ title, subtitle, itemCount }) {
+export default function Header({ title, subtitle, itemCount, onBack }) {
   return (
     <div className="header">
-      <button className="icon-button">
+      <button className="icon-button" onClick={onBack} aria-label="Go back">
         <ArrowLeft size={28} />
       </button>
       <div className="header-title-group">

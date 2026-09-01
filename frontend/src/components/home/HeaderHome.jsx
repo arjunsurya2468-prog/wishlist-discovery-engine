@@ -4,7 +4,7 @@ import { Search, Heart, ShoppingBag, Menu } from 'lucide-react';
 export default function HeaderHome({ staleItemsCount, onWishlistClick }) {
   return (
     <div className="home-header">
-      <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
+      <div className="home-brand-group">
         <button className="icon-button"><Menu size={24} /></button>
         <div className="home-logo">Myntra</div>
       </div>

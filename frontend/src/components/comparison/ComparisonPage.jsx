@@ -3,7 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import ComparisonRow from './ComparisonRow';
 import '../../comparison.css';
 
-export default function ComparisonPage({ comparisons, onDismissItem, onBack }) {
+export default function ComparisonPage({ comparisons, onDismissItem, onBack, onViewProduct, onViewReviews }) {
   return (
     <div className="comparison-page">
       <div className="pdp-header" style={{ borderBottom: 'none' }}>
@@ -11,13 +11,13 @@ export default function ComparisonPage({ comparisons, onDismissItem, onBack }) {
           <ArrowLeft size={28} />
         </button>
         <div className="header-title-group" style={{ marginLeft: 0 }}>
-          <div className="header-title">Better Matches</div>
+          <div className="header-title">Better Fit Reviews</div>
         </div>
       </div>
       
       {comparisons.length > 0 && (
-        <div className="comparison-header-context">
-          Compared on fit — based on items you've returned before.
+        <div className="comparison-info-strip">
+          Compared on fit — you've returned 2 items for sizing before.
         </div>
       )}
 
@@ -27,7 +27,9 @@ export default function ComparisonPage({ comparisons, onDismissItem, onBack }) {
             <ComparisonRow 
               key={item.id} 
               item={item} 
-              onDismiss={() => onDismissItem(item.id)} 
+              onDismiss={() => onDismissItem(item.id)}
+              onViewProduct={onViewProduct}
+              onViewReviews={onViewReviews}
             />
           ))
         ) : (

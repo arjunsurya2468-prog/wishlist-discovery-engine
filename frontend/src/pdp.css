@@ -23,12 +23,14 @@
 }
 .pdp-search-bar {
   flex: 1;
+  min-width: 0;
   display: flex;
   align-items: center;
   background-color: #f5f5f6;
   border-radius: 20px;
   padding: 8px 12px;
   border: 1px solid var(--border-color);
+  overflow: hidden;
 }
 .pdp-logo-m {
   background: linear-gradient(135deg, #f05524, #f8326a);
@@ -40,6 +42,8 @@
 }
 .pdp-search-input {
   flex: 1;
+  width: 0;
+  min-width: 0;
   border: none;
   background: transparent;
   outline: none;
@@ -626,6 +630,7 @@
 }
 .ratings-count-pill {
   background-color: #f5f5f6;
+  border: none;
   padding: 8px 16px;
   border-radius: 20px;
   display: flex;
@@ -633,6 +638,7 @@
   gap: 4px;
   font-size: 14px;
   color: var(--text-dark);
+  cursor: pointer;
 }
 .reviews-header {
   display: flex;
@@ -733,12 +739,13 @@
 
 .pdp-product-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 .pdp-grid-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .pdp-grid-image {
   width: 100%;

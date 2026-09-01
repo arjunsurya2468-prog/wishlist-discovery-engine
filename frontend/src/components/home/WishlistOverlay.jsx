@@ -1,8 +1,16 @@
 import React from 'react';
 import { X } from 'lucide-react';
 import '../../home.css';
+import overlayImg from '../../assets/grey_sweatshirt.jpg';
 
-export default function WishlistOverlay({ onDismiss, onViewItem, onSeeAlternatives }) {
+export default function WishlistOverlay({ onDismiss, onViewItem, product }) {
+  const displayProduct = product || {
+    brand: 'Roadster',
+    name: 'Men Grey Solid Sweatshirt',
+    image: overlayImg,
+    selectedSize: 'L',
+  };
+
   const stopPropagation = (e) => {
     e.stopPropagation();
   };
@@ -15,29 +23,25 @@ export default function WishlistOverlay({ onDismiss, onViewItem, onSeeAlternativ
         </button>
 
         {/* 1. Saved Product Image (LARGE and dominant) */}
-        <img src="/grey_sweatshirt.jpg" alt="Grey Sweatshirt" className="overlay-image" />
+        <img src={displayProduct.image} alt={displayProduct.name} className="overlay-image" style={{objectFit: 'cover', objectPosition: 'center'}} />
 
         <div className="overlay-content">
           {/* Headline */}
-          <div className="overlay-headline">Still saved for you</div>
+          <div className="overlay-headline">You saved this</div>
 
           {/* Time context */}
           <div className="overlay-time">
-            You added this on 4 August
+            You added this to your wishlist on 4 August
           </div>
 
           {/* Product name for identification only */}
-          <div className="overlay-name">Roadster · Men Grey Solid Sweatshirt</div>
+          <div className="overlay-name">{displayProduct.brand} · {displayProduct.name}</div>
 
           {/* Availability - plain treatment */}
-          <div className="overlay-availability">Still available in L</div>
+          <div className="overlay-availability">Still available in {displayProduct.selectedSize}</div>
 
-          {/* Actions & Alternatives */}
+          {/* Actions */}
           <div className="overlay-footer">
-            <button className="overlay-secondary-line interactive" onClick={(e) => { stopPropagation(e); onSeeAlternatives(); }}>
-              See picks with better fit reviews
-            </button>
-            
             <button className="overlay-primary-btn" onClick={(e) => { stopPropagation(e); onViewItem(); }}>
               View item
             </button>

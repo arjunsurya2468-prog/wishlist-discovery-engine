@@ -63,7 +63,10 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
 
       <div className="filter-row-container">
         <div className="filter-heading">Filter photos and reviews by</div>
-        <div className="filter-scroll-row">
+
+        {/* Rating Row */}
+        <div className="filter-scroll-row" style={{marginBottom: '12px'}}>
+          <div className="filter-row-label">Rating:</div>
           {starFilters.map(sf => (
             <button 
               key={sf} 
@@ -73,8 +76,11 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
               {sf}
             </button>
           ))}
-          <div className="filter-divider"></div>
-          
+        </div>
+
+        {/* Shows Row */}
+        <div className="filter-scroll-row">
+          <div className="filter-row-label">Shows:</div>
           <button 
             className={`filter-chip ${activeConcern === 'Fit' ? 'selected' : ''}`}
             onClick={() => setActiveConcern(activeConcern === 'Fit' ? 'All' : 'Fit')}
@@ -93,7 +99,7 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
       {activeConcern === 'Fit' && (
         <div className="personalisation-line">
           Showing fit reviews — based on items you've returned before. 
-          <button onClick={() => setActiveConcern('All')}>Show all</button>
+          <button onClick={() => setActiveConcern('All')}>Show all reviews</button>
         </div>
       )}
 

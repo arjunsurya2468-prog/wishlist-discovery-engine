@@ -1,6 +1,23 @@
 import React from 'react';
 
-export default function DetailsSection() {
+const CATEGORY_DETAILS = {
+  tshirt: {
+    closure: 'Button',
+    fabric: 'Cotton',
+    items: ['Black Tshirt for Men', 'Solid', 'Regular length', 'Henley Neck', 'Long, Regular Sleeves', 'Knitted Cotton fabric', 'Button closure'],
+    styleNote: 'Pair This Henley T-Shirt With Denim Or Chinos And Sneakers Or Boots For A Smart Casual Look. Perfect For Layering Under Jackets Or Wearing Solo Across Seasons.',
+  },
+  sweatshirt: {
+    closure: 'Pullover',
+    fabric: 'Cotton Blend',
+    items: ['Grey sweatshirt for Men', 'Solid', 'Regular length', 'Round Neck', 'Long sleeves', 'Knitted cotton-blend fabric', 'Pullover closure'],
+    styleNote: 'Layer this grey sweatshirt over a T-shirt and pair it with denim or joggers for an easy everyday look.',
+  },
+};
+
+export default function DetailsSection({ product }) {
+  const details = CATEGORY_DETAILS[product?.category] || CATEGORY_DETAILS.tshirt;
+
   return (
     <div className="pdp-section">
       <div className="contact-card">
@@ -18,24 +35,18 @@ export default function DetailsSection() {
           </div>
           <div className="spec-item">
             <div className="spec-label">Closure</div>
-            <div className="spec-value">Button</div>
+            <div className="spec-value">{details.closure}</div>
           </div>
           <div className="spec-item">
             <div className="spec-label">Fabrics</div>
-            <div className="spec-value">Cotton</div>
+            <div className="spec-value">{details.fabric}</div>
           </div>
         </div>
 
         <div className="details-block">
           <div className="details-heading">Product Details</div>
           <ul className="details-list">
-            <li>Black Tshirt for Men</li>
-            <li>Solid</li>
-            <li>Regular length</li>
-            <li>Henley Neck</li>
-            <li>Long, Regular Sleeves</li>
-            <li>Knitted Cotton fabric</li>
-            <li>Button closure</li>
+            {details.items.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </div>
 
@@ -55,7 +66,7 @@ export default function DetailsSection() {
         <div className="details-block" style={{border: '1px solid #eaeaec', padding: '16px', borderRadius: '12px'}}>
           <div className="details-heading" style={{marginTop: 0}}>Style Note</div>
           <div className="details-text">
-            Pair This Henley T-Shirt With Denim Or Chinos And Sneakers Or Boots For A Smart Casual Look. Perfect For Layering Under Jackets Or Wearing Solo Across Seasons.
+            {details.styleNote}
           </div>
         </div>
       </div>

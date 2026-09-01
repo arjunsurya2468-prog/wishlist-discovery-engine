@@ -1,7 +1,17 @@
 import React from 'react';
 import { MapPin, CheckCircle2, Package, CreditCard, RefreshCw, ChevronRight } from 'lucide-react';
 
-export default function DeliverySection() {
+const DEFAULT_PRODUCT = {
+  currentPrice: 393,
+  originalPrice: 1299,
+  discountShort: '70% OFF',
+};
+
+function formatPrice(price) {
+  return price.toLocaleString('en-IN');
+}
+
+export default function DeliverySection({ product = DEFAULT_PRODUCT }) {
   return (
     <div className="pdp-section bordered-top">
       <div className="section-heading">Delivery & Services</div>
@@ -23,8 +33,8 @@ export default function DeliverySection() {
           </div>
         </div>
         <div className="estimate-right">
-          <div className="estimate-mrp">MRP ₹1299</div>
-          <div><strong style={{fontSize:'16px'}}>₹393</strong> <span className="estimate-discount">(70% OFF)</span></div>
+          <div className="estimate-mrp">MRP ₹{formatPrice(product.originalPrice)}</div>
+          <div><strong style={{fontSize:'16px'}}>₹{formatPrice(product.currentPrice)}</strong> <span className="estimate-discount">({product.discountShort})</span></div>
         </div>
       </div>
 

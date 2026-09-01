@@ -6,12 +6,17 @@
   flex-direction: column;
 }
 
-/* Header context */
-.comparison-header-context {
-  padding: 0 20px 16px;
+/* Info Strip — personalization justification */
+.comparison-info-strip {
+  margin: 0 20px 16px;
+  background-color: #FFF1F3;
+  border-left: 3px solid #FF3E6C;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
   font-size: 14px;
-  color: var(--text-gray);
-  border-bottom: 1px solid var(--border-color);
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.4;
 }
 
 .comparison-list {
@@ -26,6 +31,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .comparison-row:last-child {
   border-bottom: none;
 }
@@ -52,7 +58,7 @@
 .vs-badge {
   position: absolute;
   left: 50%;
-  top: 35%; /* align generally with image centers */
+  top: 35%;
   transform: translate(-50%, -50%);
   background: white;
   border: 1px solid var(--border-color);
@@ -65,7 +71,7 @@
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   z-index: 2;
 }
 
@@ -73,10 +79,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-width: 0; /* allows text truncation */
+  min-width: 0;
 }
 
-/* Qualifier Tag */
+/* Qualifier Tag — now inline inside the card, below the image */
 .qualifier-tag {
   background-color: #e5f6e8;
   color: #03a685;
@@ -84,14 +90,10 @@
   font-weight: 700;
   padding: 4px 8px;
   border-radius: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  margin-top: 4px;
   align-self: flex-start;
   white-space: nowrap;
-}
-
-.qualifier-placeholder {
-  height: 23px; /* Match height of qualifier tag to keep cards aligned */
-  margin-bottom: 8px;
 }
 
 /* Image */
@@ -101,6 +103,7 @@
   background-color: #e2e8f0;
   border-radius: 8px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 /* Info */
@@ -123,7 +126,7 @@
   margin-bottom: 8px;
 }
 
-/* Evidence Block - Crucial */
+/* Evidence Block */
 .evidence-block {
   background-color: #fcfcfc;
   border: 1px solid #eee;
@@ -131,10 +134,11 @@
   border-radius: 6px;
   margin-top: 4px;
   margin-bottom: 16px;
-  flex-grow: 1; /* Pushes price down, keeps them aligned if heights differ */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 90px;
 }
 
 .evidence-text {
@@ -144,6 +148,20 @@
   line-height: 1.4;
 }
 
+.evidence-review-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-red);
+  line-height: 1.4;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .evidence-bold {
   font-size: 20px;
   font-weight: 800;
@@ -151,9 +169,11 @@
   display: block;
   margin-top: 4px;
 }
-.evidence-bold.warning {
-  color: #dd6b20; /* Orange */
+
+.evidence-bold.neutral {
+  color: #282C3F;
 }
+
 .evidence-bold.good {
   color: #03a685;
 }
@@ -173,9 +193,11 @@
   border-radius: 2px;
   transition: width 0.3s ease;
 }
-.evidence-scale-bar-fill.warning {
-  background-color: #dd6b20;
+
+.evidence-scale-bar-fill.neutral {
+  background-color: #94969f;
 }
+
 .evidence-scale-bar-fill.good {
   background-color: #03a685;
 }
@@ -192,6 +214,7 @@
   font-size: 15px;
   font-weight: 800;
 }
+
 .compare-mrp {
   font-size: 12px;
   color: var(--text-gray);
@@ -200,8 +223,13 @@
 
 .price-diff-line {
   font-size: 12px;
-  color: var(--text-gray);
+  font-weight: 400;
+  color: var(--text-dark);
   margin-top: 2px;
+}
+
+.price-diff-line.price-diff-savings {
+  color: #03a685;
 }
 
 /* Action Rows */
@@ -218,16 +246,20 @@
   align-items: center;
 }
 
-.action-col-left, .action-col-right {
+.action-col-left,
+.action-col-right {
   flex: 1;
 }
 
-.keep-this-link {
-  background: none;
-  border: none;
-  color: var(--text-gray);
-  font-size: 13px;
-  text-decoration: underline;
+/* Keep this one — equal-weight outlined button */
+.keep-this-btn {
+  background: white;
+  border: 1px solid #D4D5D9;
+  color: #282C3F;
+  font-size: 14px;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 4px;
   cursor: pointer;
   width: 100%;
   text-align: center;
@@ -237,7 +269,7 @@
   background-color: var(--primary-red);
   color: white;
   border: none;
-  padding: 12px;
+  height: 48px;
   border-radius: 4px;
   font-weight: 700;
   font-size: 14px;
@@ -262,6 +294,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .compare-secondary-btn.undo-state {
   background-color: #f5f5f6;
   border-color: #d4d5d9;
@@ -290,16 +323,19 @@
   text-align: center;
   color: var(--text-gray);
 }
+
 .comparison-empty-title {
   font-size: 18px;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 8px;
 }
+
 .comparison-empty p {
   font-size: 15px;
   margin-bottom: 24px;
 }
+
 .comparison-empty button {
   padding: 12px 24px;
   border: 1.5px solid var(--primary-red);

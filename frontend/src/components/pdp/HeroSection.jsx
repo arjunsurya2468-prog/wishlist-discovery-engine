@@ -1,16 +1,37 @@
 import React from 'react';
 import { Share2, Heart, RefreshCcw, Star, ChevronRight, ShoppingBag } from 'lucide-react';
+import heroImg from '../../assets/black_tshirt.jpg';
 
-export default function HeroSection() {
+const DEFAULT_PRODUCT = {
+  brand: 'London Hills',
+  name: 'Men Henley Neck T-shirt',
+  image: heroImg,
+  currentPrice: 393,
+  originalPrice: 1299,
+  discount: '70% OFF!',
+  dealPrice: 364,
+  extraOff: 29,
+  rating: '4.1',
+  ratingsCount: 31,
+  color: 'Black',
+  selectedSize: 'L',
+  chest: '42.0in',
+};
+
+function formatPrice(price) {
+  return price.toLocaleString('en-IN');
+}
+
+export default function HeroSection({ product = DEFAULT_PRODUCT }) {
   return (
     <div className="pdp-section">
       <div className="hero-image-container">
-        <div className="hero-placeholder"></div>
+        <img src={product.image} alt={product.name} style={{width: '100%', height: '100%', objectFit: 'contain'}} />
         <div className="hero-rating-badge">
-          <span style={{ fontWeight: 'bold' }}>4.1</span>
+          <span style={{ fontWeight: 'bold' }}>{product.rating}</span>
           <Star size={12} fill="#03a685" color="#03a685" />
           <div className="vertical-divider"></div>
-          <span>31</span>
+          <span>{product.ratingsCount}</span>
         </div>
       </div>
       
@@ -28,22 +49,22 @@ export default function HeroSection() {
       </div>
 
       <div className="pdp-title-block">
-        <div className="pdp-brand-title">London Hills</div>
-        <div className="pdp-product-name">Men Henley Neck T-shirt</div>
+        <div className="pdp-brand-title">{product.brand}</div>
+        <div className="pdp-product-name">{product.name}</div>
         <div className="pdp-price-row">
           <span className="pdp-mrp-label">MRP</span>
-          <span className="pdp-strikethrough">₹1,299</span>
-          <span className="pdp-current-price">₹393</span>
-          <span className="pdp-discount-tag">70% OFF!</span>
+          <span className="pdp-strikethrough">₹{formatPrice(product.originalPrice)}</span>
+          <span className="pdp-current-price">₹{formatPrice(product.currentPrice)}</span>
+          <span className="pdp-discount-tag">{product.discount}</span>
         </div>
       </div>
 
       <div className="mega-deal-banner">
         <div className="mega-deal-left">
           <div className="mega-deal-icon">MEGA DEAL</div>
-          <div className="mega-deal-text">Get at <span className="mega-deal-price">₹364</span></div>
+          <div className="mega-deal-text">Get at <span className="mega-deal-price">₹{formatPrice(product.dealPrice)}</span></div>
         </div>
-        <button className="mega-deal-btn">Extra ₹29 Off</button>
+        <button className="mega-deal-btn">Extra ₹{product.extraOff} Off</button>
       </div>
 
       <div className="bank-offer-row">
@@ -55,23 +76,25 @@ export default function HeroSection() {
       </div>
 
       <div className="color-selector">
-        <div className="selector-title"><strong>Colour</strong> Black</div>
+        <div className="selector-title"><strong>Colour</strong> {product.color}</div>
         <div className="color-thumbnails">
           {[1,2,3,4,5,6].map((i) => (
-            <div key={i} className={`color-thumb ${i === 6 ? 'selected' : ''}`}></div>
+            <div key={i} className={`color-thumb ${i === 6 ? 'selected' : ''}`}>
+              <img src={product.image} alt="" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px'}} />
+            </div>
           ))}
         </div>
       </div>
 
       <div className="size-selector">
         <div className="size-header">
-          <div className="selector-title"><strong>Size: L</strong></div>
+          <div className="selector-title"><strong>Size: {product.selectedSize}</strong></div>
           <button className="red-link">Size Chart <ChevronRight size={16} /></button>
         </div>
-        <div className="size-subtext">GARMENT: Chest 42.0in</div>
+        <div className="size-subtext">GARMENT: Chest {product.chest}</div>
         <div className="size-pills">
           {['S', 'M', 'L', 'XL', 'XXL'].map(size => (
-            <div key={size} className={`size-pill ${size === 'L' ? 'selected' : ''}`}>{size}</div>
+            <div key={size} className={`size-pill ${size === product.selectedSize ? 'selected' : ''}`}>{size}</div>
           ))}
         </div>
       </div>

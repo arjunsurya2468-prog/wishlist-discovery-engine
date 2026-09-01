@@ -1,7 +1,11 @@
 import React from 'react';
 import { Star, ChevronRight, CheckCircle2 } from 'lucide-react';
 
-export default function ReviewsSection({ activeConcern, setActiveConcern, onViewAll }) {
+export default function ReviewsSection({ activeConcern, setActiveConcern, onViewAll, product }) {
+  const rating = product?.rating || '4.1';
+  const ratingsCount = product?.ratingsCount || 31;
+  const reviewsCount = product?.reviewsCount || 7;
+
   const reviews = [
     { size: 'L', date: 'Apr 14, 2026', text: "It's best product and also under budget 👌 👏 😀 and I am very satisfying after buy this product", author: 'Ayush Morya', rating: '5' },
     { size: 'M', date: 'Jun 21, 2026', text: "Worth vermarking product for this humid weather...", author: 'Sohan', rating: '5' },
@@ -13,28 +17,39 @@ export default function ReviewsSection({ activeConcern, setActiveConcern, onView
       
       <div className="ratings-summary-row">
         <div className="rating-badge-large">
-          <span>4.1</span>
+          <span>{rating}</span>
           <Star size={16} fill="white" color="white" />
         </div>
-        <div className="ratings-count-pill">
-          31 ratings | 7 reviews <ChevronRight size={16} />
-        </div>
+        <button className="ratings-count-pill" onClick={onViewAll}>
+          {ratingsCount} ratings | {reviewsCount} reviews <ChevronRight size={16} />
+        </button>
       </div>
 
       <div className="filter-scroll-row" style={{marginBottom: '16px'}}>
-        {['All', 'Fit', 'Quality'].map(concern => (
+        {[
+          { id: 'All', label: 'All' },
+          { id: 'Fit', label: 'Fit · 4' },
+          { id: 'Quality', label: 'Quality · 3' }
+        ].map(concern => (
           <button 
-            key={concern}
-            className={`filter-chip ${activeConcern === concern ? 'selected' : ''}`}
-            onClick={() => setActiveConcern(concern)}
+            key={concern.id}
+            className={`filter-chip ${activeConcern === concern.id ? 'selected' : ''}`}
+            onClick={() => setActiveConcern(concern.id)}
           >
-            {concern}
+            {concern.label}
           </button>
         ))}
       </div>
 
+      {activeConcern === 'Fit' && (
+        <div className="personalisation-line" style={{marginBottom: '24px'}}>
+          Showing fit reviews — based on items you've returned before.
+          <button onClick={() => setActiveConcern('All')}>Show all reviews</button>
+        </div>
+      )}
+
       <div className="reviews-header">
-        <div className="section-heading" style={{margin:0}}>Customer Reviews (7)</div>
+        <div className="section-heading" style={{margin:0}}>Customer Reviews ({reviewsCount})</div>
         <button className="link-button underlined" onClick={onViewAll}>View All</button>
       </div>
 
