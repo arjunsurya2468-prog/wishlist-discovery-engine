@@ -1,10 +1,13 @@
 import React from 'react';
 import { Star, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { REVIEW_STATS } from '../../reviewStats.js';
 
 export default function ReviewsSection({ activeConcern, setActiveConcern, onViewAll, product }) {
   const rating = product?.rating || '4.1';
-  const ratingsCount = product?.ratingsCount || 31;
-  const reviewsCount = product?.reviewsCount || 7;
+  const ratingsCount = product?.ratingsCount ?? REVIEW_STATS.ratingsCount;
+  const reviewsCount = product?.reviewsCount ?? REVIEW_STATS.reviewsCount;
+  const fitReviewsCount = product?.fitReviewsCount ?? REVIEW_STATS.fitReviewsCount;
+  const qualityReviewsCount = product?.qualityReviewsCount ?? REVIEW_STATS.qualityReviewsCount;
 
   const reviews = [
     { size: 'L', date: 'Apr 14, 2026', text: "It's best product and also under budget 👌 👏 😀 and I am very satisfying after buy this product", author: 'Ayush Morya', rating: '5' },
@@ -28,8 +31,8 @@ export default function ReviewsSection({ activeConcern, setActiveConcern, onView
       <div className="filter-scroll-row" style={{marginBottom: '16px'}}>
         {[
           { id: 'All', label: 'All' },
-          { id: 'Fit', label: 'Fit · 4' },
-          { id: 'Quality', label: 'Quality · 3' }
+          { id: 'Fit', label: `Fit · ${fitReviewsCount}` },
+          { id: 'Quality', label: `Quality · ${qualityReviewsCount}` }
         ].map(concern => (
           <button 
             key={concern.id}

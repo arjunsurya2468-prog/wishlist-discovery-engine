@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { ArrowLeft, Star, ChevronDown } from 'lucide-react';
 import ReviewCardVertical from './ReviewCardVertical';
 import '../../reviews.css';
+import { REVIEW_STATS } from '../../reviewStats.js';
 
 export default function ReviewsPage({ activeConcern, setActiveConcern, onBack }) {
   const [selectedStar, setSelectedStar] = useState('All');
 
   const starFilters = ['All', '5★', '4★', '3★', '2★', '1★'];
   
-  // 4 Fit, 3 Quality, 2 Both = 7 Total
+  // Representative review cards; the counters reflect the full review set.
   const reviews = [
     { id: 1, rating: 5, date: 'Apr 14, 2026', text: "It's best product and also under budget 👌 👏 😀 and I am very satisfying after buy this product", author: 'Ayush Morya', size: 'L', concerns: ['Fit', 'Quality'], helpfulCount: 12 },
     { id: 2, rating: 5, date: 'Jun 21, 2026', text: "Worth vermarking product for this humid weather...", author: 'Sohan', size: 'M', concerns: ['Fit'], helpfulCount: 8 },
@@ -29,6 +30,14 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
     return true;
   });
 
+  const displayedReviewCount = selectedStar === 'All'
+    ? activeConcern === 'Fit'
+      ? REVIEW_STATS.fitReviewsCount
+      : activeConcern === 'Quality'
+        ? REVIEW_STATS.qualityReviewsCount
+        : REVIEW_STATS.reviewsCount
+    : filteredReviews.length;
+
   return (
     <div className="reviews-page">
       <div className="pdp-header">
@@ -44,7 +53,9 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
             <div className="rating-big-score-value">
               4.1 <Star size={32} fill="#03a685" color="#03a685" />
             </div>
-            <div className="rating-big-score-label">31 Ratings & 7 Reviews</div>
+            <div className="rating-big-score-label">
+              {REVIEW_STATS.ratingsCount} Ratings & {REVIEW_STATS.reviewsCount} Reviews
+            </div>
           </div>
           
           <div className="rating-distribution">
@@ -54,7 +65,7 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
                 <div className="dist-bar-bg">
                   <div className="dist-bar-fill" style={{width: stars === 5 ? '60%' : stars === 4 ? '25%' : stars === 3 ? '10%' : '5%'}}></div>
                 </div>
-                <span>{stars === 5 ? 18 : stars === 4 ? 8 : stars === 3 ? 3 : 1}</span>
+                <span>{stars === 5 ? 139 : stars === 4 ? 58 : stars === 3 ? 23 : stars === 2 ? 7 : 4}</span>
               </div>
             ))}
           </div>
@@ -85,13 +96,13 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
             className={`filter-chip ${activeConcern === 'Fit' ? 'selected' : ''}`}
             onClick={() => setActiveConcern(activeConcern === 'Fit' ? 'All' : 'Fit')}
           >
-            Fit · 4
+            Fit · {REVIEW_STATS.fitReviewsCount}
           </button>
           <button 
             className={`filter-chip ${activeConcern === 'Quality' ? 'selected' : ''}`}
             onClick={() => setActiveConcern(activeConcern === 'Quality' ? 'All' : 'Quality')}
           >
-            Quality · 3
+            Quality · {REVIEW_STATS.qualityReviewsCount}
           </button>
         </div>
       </div>
@@ -105,7 +116,7 @@ export default function ReviewsPage({ activeConcern, setActiveConcern, onBack })
 
       <div className="reviews-list-container">
         <div className="reviews-list-header">
-          <div className="reviews-count">Customer Reviews ({filteredReviews.length})</div>
+          <div className="reviews-count">Customer Reviews ({displayedReviewCount})</div>
           <div className="sort-control">
             Most Helpful <ChevronDown size={16} />
           </div>

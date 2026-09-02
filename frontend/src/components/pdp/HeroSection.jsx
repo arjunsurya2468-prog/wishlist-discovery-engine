@@ -1,6 +1,7 @@
 import React from 'react';
 import { Share2, Heart, RefreshCcw, Star, ChevronRight, ShoppingBag } from 'lucide-react';
 import heroImg from '../../assets/black_tshirt.jpg';
+import { REVIEW_STATS } from '../../reviewStats.js';
 
 const DEFAULT_PRODUCT = {
   brand: 'London Hills',
@@ -12,7 +13,7 @@ const DEFAULT_PRODUCT = {
   dealPrice: 364,
   extraOff: 29,
   rating: '4.1',
-  ratingsCount: 31,
+  ratingsCount: REVIEW_STATS.ratingsCount,
   color: 'Black',
   selectedSize: 'L',
   chest: '42.0in',
