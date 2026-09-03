@@ -11,7 +11,7 @@ export default function ComparisonPage({ comparisons, onDismissItem, onBack, onV
           <ArrowLeft size={28} />
         </button>
         <div className="header-title-group" style={{ marginLeft: 0 }}>
-          <div className="header-title">Better Fit Reviews</div>
+          <div className="header-title">Better Matches</div>
         </div>
       </div>
       
@@ -35,7 +35,7 @@ export default function ComparisonPage({ comparisons, onDismissItem, onBack, onV
         ) : (
           <div className="comparison-empty">
             <div className="comparison-empty-title">All caught up!</div>
-            <p>You've reviewed all your better fit matches.</p>
+            <p>You've reviewed all the better matches.</p>
             <button onClick={onBack}>Back to Wishlist</button>
           </div>
         )}

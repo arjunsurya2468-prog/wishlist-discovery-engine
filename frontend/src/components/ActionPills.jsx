@@ -9,7 +9,7 @@ export default function ActionPills({ matchCount, onCompareClick, onCollectionCl
           className="action-pill compare-pill-accent" 
           onClick={onCompareClick}
         >
-          Better fit reviews
+          Better Matches
           <span className="compare-badge">{matchCount}</span>
         </button>
       )}
